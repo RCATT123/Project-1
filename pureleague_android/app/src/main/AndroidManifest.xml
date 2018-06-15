@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.specifix.pureleagues">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+
+    <permission
+        android:name="com.specifix.pureleagues.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+    <uses-permission android:name="com.specifix.pureleagues.permission.C2D_MESSAGE" />
+
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.parse.SERVER_URL"
+            android:value="@string/parse_server_url" />
+        <meta-data
+            android:name="com.parse.APPLICATION_ID"
+            android:value="@string/parse_app_id" />
+
+        <activity
+            android:name=".activity.SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".activity.WelcomeActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.RegisterActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.RegisterContinueActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.RegisterPickerActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".activity.LoginActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.MainActivity"
+            android:screenOrientation="portrait" />
+
+        <service
+            android:name=".service.LocationService"
+            android:exported="false" />
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="11187c99483ebfb531f7320380c5f850f9529f30" />
+
+        <service android:name="com.parse.PushService" />
+
+        <receiver
+            android:name=".receiver.PushReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.parse.push.intent.RECEIVE" />
+                <action android:name="com.parse.push.intent.DELETE" />
+                <action android:name="com.parse.push.intent.OPEN" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.parse.GcmBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+
+                <category android:name="com.specifix.pureleagues" />
+            </intent-filter>
+        </receiver>
+
+        <meta-data
+            android:name="com.parse.push.gcm_sender_id"
+            android:value="id:55501631115" />
+    </application>
+
+</manifest>

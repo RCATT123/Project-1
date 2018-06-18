@@ -236,7 +236,10 @@ public class RegisterContinueActivity extends AppCompatActivity implements UserM
     }
 
     @Override
-    public void onUserLogin(ParseUser user) {
+    /*public void onUserLogin(ParseUser user) {
+
+    }*/
+    public void onUserLogin() {
 
     }
 

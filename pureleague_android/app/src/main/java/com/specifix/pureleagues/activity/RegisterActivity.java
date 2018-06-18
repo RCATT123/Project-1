@@ -364,7 +364,10 @@ public class RegisterActivity extends AppCompatActivity implements UserManager.U
     }
 
     @Override
-    public void onUserLogin(ParseUser user) {
+    /*public void onUserLogin(ParseUser user) {
+
+    }*/
+    public void onUserLogin() {
 
     }
 

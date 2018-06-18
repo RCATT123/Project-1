@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <me.grantland.widget.AutofitTextView
+            android:id="@+id/results_title_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/background"
+            android:gravity="center"
+            android:lines="1"
+            android:padding="10dp"
+            android:text="@string/tab_results_title"
+            android:textAllCaps="true"
+            android:textColor="@color/title_white_text_color"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/results_arrow_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/title_arrow_margin"
+            android:layout_marginRight="@dimen/title_arrow_margin"
+            android:drawableLeft="@drawable/ic_keyboard_arrow_left_black_24dp"
+            android:gravity="center"
+            android:text="@string/previous"
+            android:textColor="@color/title_white_text_color"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/results_arrow_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginLeft="@dimen/title_arrow_margin"
+            android:layout_marginRight="@dimen/title_arrow_margin"
+            android:drawableRight="@drawable/ic_keyboard_arrow_right_black_24dp"
+            android:gravity="center"
+            android:text="@string/next"
+            android:textColor="@color/title_white_text_color"
+            android:visibility="gone" />
+
+    </FrameLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/results_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+    <me.grantland.widget.AutofitTextView
+        android:id="@+id/results_no_data_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:lines="2"
+        android:text="@string/no_results_available"
+        android:textColor="@color/general_text_color"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/results_footer"
+        layout="@layout/footer_layout"
+        android:visibility="gone" />
+</LinearLayout>

@@ -250,7 +250,10 @@ public class EditTeamFragment extends Fragment implements UserManager.UserListen
     }
 
     @Override
-    public void onUserLogin(ParseUser user) {
+    /*public void onUserLogin(ParseUser user) {
+
+    }*/
+    public void onUserLogin() {
 
     }
 

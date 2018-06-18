@@ -91,21 +91,21 @@ public class UserManager {
     }
 
     public void registerUser(User user, final UserListener listener) {
-        ParseUser parseUser = new ParseUser();
+        /*ParseUser parseUser = new ParseUser();
         parseUser.put(NAME_KEY, user.getName());
         parseUser.setUsername(user.getUsername());
         parseUser.setPassword(user.getPassword());
         parseUser.setEmail(user.getEmail());
         parseUser.put(DATE_OF_BIRTH_KEY, user.getDateOfBirth());
         parseUser.put(GENDER_KEY, user.getGender());
-        parseUser.put(USER_TYPE_KEY, user.getType());
+        parseUser.put(USER_TYPE_KEY, user.getType());*/
 //        if (user.getType().equals("Player")) {
 //            parseUser.put(HEIGHT_KEY, user.getHeight());
 //            parseUser.put(WEIGHT_KEY, user.getWeight());
 //            parseUser.put(POSITION_KEY, user.getPosition());
 //            parseUser.put(ABOUT_ME_KEY, user.getProfile());
 //        }
-        parseUser.signUpInBackground(new SignUpCallback() {
+        /*parseUser.signUpInBackground(new SignUpCallback() {
             public void done(ParseException e) {
                 if (e == null) {
                     listener.onSuccess();
@@ -122,10 +122,47 @@ public class UserManager {
                     }
                 }
             }
+        });*/
+
+
+        ApiInterface mApiService = this.getInterfaceService();
+        Call<Login> mService = mApiService.registration(user.getName(), user.getEmail(), user.getGender(), user.getDateOfBirth(),
+                user.getUsername(), user.getType(), user.getPassword(), user.getHeight(), user.getWeight(), user.getPosition(), user.getProfile());
+        mService.enqueue(new Callback<Login>() {
+            @Override
+            public void onResponse(Call<Login> call, Response<Login> response) {
+                Login mLoginObject = response.body();
+                String returnedResponse = mLoginObject.isLogin;
+                //showProgress(false);
+                if(returnedResponse.trim().equals("0")){
+                    // redirect to Main Activity page
+                    listener.onSuccess();
+                }
+                if(returnedResponse.trim().equals("1")){
+                    // use the registration button to register
+                    listener.onError("This email already taken");
+                }
+                if(returnedResponse.trim().equals("2")){
+                    // use the registration button to register
+                    listener.onError("This user already exist");
+                }
+                if(returnedResponse.trim().equals("3")){
+                    // use the registration button to register
+                    listener.onError("Something happend, try again");
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Login> call, Throwable t) {
+                call.cancel();
+                listener.onError("Connection error");
+            }
         });
+
+
     }
 
-    public void loginUser(String username, String password) {
+    public void loginUser(String username, String password, final UserListener listener) {
         /*ParseUser.logInInBackground(
                 username,
                 password,
@@ -151,32 +188,23 @@ public class UserManager {
         mService.enqueue(new Callback<Login>() {
             @Override
             public void onResponse(Call<Login> call, Response<Login> response) {
-
                 Login mLoginObject = response.body();
-                Log.w(" Full json res ", new Gson().toJson(response));
-                //String returnedResponse = mLoginObject.isLogin;
-                //Toast.makeText(UserManager.this, "Returned " + returnedResponse, Toast.LENGTH_LONG).show();
-                //System.out.println("UserManager.onResponse "+ returnedResponse);
-
-                //showProgress(false);
-                //if(returnedResponse.trim().equals("1")){
+                String returnedResponse = mLoginObject.isLogin;
+                if(returnedResponse.trim().equals("1")){
                     // redirect to Main Activity page
-                    /*Intent loginIntent = new Intent(LoginActivity.this, MainActivity.class);
-                    loginIntent.putExtra("EMAIL", email);
-                    startActivity(loginIntent);*/
-                //}
-                //if(returnedResponse.trim().equals("0")){
+
+                    listener.onUserLogin();
+                }
+                if(returnedResponse.trim().equals("0")){
                     // use the registration button to register
-                    /*failedLoginMessage.setText(getResources().getString(R.string.registration_message));
-                    mPasswordView.requestFocus();*/
-                //}
+                    listener.onError(((Context) listener).getString(R.string.invalid_credentials_error_message));
+                }
             }
 
             @Override
             public void onFailure(Call<Login> call, Throwable t) {
                 call.cancel();
-                System.out.println("UserManager.onFailure");
-                //Toast.makeText(LoginActivity.this, "Please check your network connection and internet permission", Toast.LENGTH_LONG).show();
+                listener.onError("Connection error");
             }
         });
     }
@@ -426,23 +454,19 @@ public class UserManager {
     }
 
     public interface UserListener {
-
         void onSuccess();
-
-        void onUserLogin(ParseUser user);
-
+        //void onUserLogin(ParseUser user);
+        void onUserLogin();
         void onError(String message);
     }
 
     public interface LogoutListener {
-
         void onLogout();
     }
 
     private ApiInterface getInterfaceService() {
-
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://10.10.11.54:8080/pureleague/public/api/")
+                .baseUrl("http://10.10.11.54:8080/pureleague/public/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 

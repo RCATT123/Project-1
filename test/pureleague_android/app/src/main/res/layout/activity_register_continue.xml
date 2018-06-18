@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/welcome_background"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="32dp"
+        app:srcCompat="@drawable/welcome_logo" />
+
+    <TextView
+        android:id="@+id/register_continue_title_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="32dp"
+        android:text="@string/register_continue_title_text"
+        android:textAlignment="center"
+        android:textColor="@color/general_text_color"
+        android:textSize="16sp" />
+
+    <LinearLayout
+        android:id="@+id/register_continue_association_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:orientation="vertical"
+        tools:visibility="gone">
+
+        <TextView
+            android:id="@+id/register_continue_association_picker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/form_picker_light_selector"
+            android:gravity="center_vertical"
+            android:paddingBottom="12dp"
+            android:paddingEnd="16dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingStart="16dp"
+            android:paddingTop="12dp"
+            android:text="@string/football_association_hint"
+            android:textAllCaps="false"
+            android:textColor="@drawable/list_item_text_color_selector"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/register_continue_next_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/background"
+            android:text="@string/continue_button_text"
+            android:textColor="@color/title_white_text_color" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/register_continue_submit_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <TextView
+            android:id="@+id/register_continue_division_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/form_picker_light_selector"
+            android:enabled="false"
+            android:gravity="center_vertical"
+            android:paddingBottom="12dp"
+            android:paddingEnd="16dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingStart="16dp"
+            android:paddingTop="12dp"
+            android:text="@string/division_hint"
+            android:textColor="@drawable/list_item_text_color_selector" />
+
+        <TextView
+            android:id="@+id/register_continue_club_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/form_picker_light_selector"
+            android:enabled="false"
+            android:gravity="center_vertical"
+            android:paddingBottom="12dp"
+            android:paddingEnd="16dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingStart="16dp"
+            android:paddingTop="12dp"
+            android:text="@string/club_hint"
+            android:textColor="@drawable/list_item_text_color_selector" />
+
+        <TextView
+            android:id="@+id/register_continue_team_colors"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/form_picker_light_selector"
+            android:enabled="false"
+            android:gravity="center_vertical"
+            android:paddingBottom="12dp"
+            android:paddingEnd="16dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingStart="16dp"
+            android:paddingTop="12dp"
+            android:text="@string/team_colors_hint"
+            android:textColor="@drawable/list_item_text_color_selector" />
+
+        <Button
+            android:id="@+id/register_continue_submit_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/background"
+            android:text="@string/register_button_text"
+            android:textColor="@color/title_white_text_color" />
+    </LinearLayout>
+
+</LinearLayout>

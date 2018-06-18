@@ -116,7 +116,7 @@ public class LoginActivity extends AppCompatActivity implements UserManager.User
 
         UserManager.getInstance().loginUser(
                 mUsernameEditText.getText().toString().trim().toLowerCase(),
-                mPasswordEditText.getText().toString());
+                mPasswordEditText.getText().toString(), this);
     }
 
     @OnClick(R.id.login_email_submit_button)
@@ -204,7 +204,8 @@ public class LoginActivity extends AppCompatActivity implements UserManager.User
     }
 
     @Override
-    public void onUserLogin(ParseUser user) {
+    //public void onUserLogin(ParseUser user) {
+    public void onUserLogin() {
 //        mSubmitBtn.setEnabled(true);
 //        if (mProgressDialog != null && mProgressDialog.isShowing()) {
 //            mProgressDialog.dismiss();

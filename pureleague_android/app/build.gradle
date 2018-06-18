@@ -67,7 +67,7 @@ dependencies {
     compile "com.google.android.gms:play-services-maps:$PLAY_SERVICES_VERSION"
     compile "com.jakewharton:butterknife:$BUTTERKNIFE_VERSION"
     annotationProcessor "com.jakewharton:butterknife-compiler:$BUTTERKNIFE_VERSION"
-    compile "com.parse:parse-android:$PARSE_VERSION"
+    //compile "com.parse:parse-android:$PARSE_VERSION"
     compile "com.google.code.gson:gson:$GSON_VERSION"
     compile 'com.visuality.f32forandroid:f32:2.1'
     compile 'me.grantland:autofittextview:0.2.+'

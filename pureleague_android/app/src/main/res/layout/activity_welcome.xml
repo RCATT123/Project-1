@@ -76,6 +76,7 @@
                 android:layout_margin="6dp"
                 android:background="@color/background"
                 android:text="@string/welcome_add_team_button_text"
+                android:visibility="gone"
                 android:textColor="@color/title_white_text_color" />
 
         </LinearLayout>

@@ -23,13 +23,13 @@ $app -> get('/api/users/', function(){
 /**
  * Fetch single user by username and password
  */
-$app -> get('/api/user/{uname}/{password}', function($request, $response){
+$app -> get('/api/user/{username}/{password}', function($request, $response){
     
     require_once('inc/db.php');
-    $uname = $request -> getAttribute('uname');
+    $uname = $request -> getAttribute('username');
     $pass = $request -> getAttribute('password');
     
-    $query = "select _id from tbl_users where username='$uname' and _hashed_password='$pass'";
+    $query = "select _id, name, email, username, password, date_of_birth, gender, user_type from tbl_users where username='$uname' and _hashed_password='$pass'";
     $result = $mysqli -> query($query);
     $num = $result -> num_rows;
     if($num > 0){
@@ -43,25 +43,33 @@ $app -> get('/api/user/{uname}/{password}', function($request, $response){
 /**
  * Register user
  */
-$app -> post('/api/newUser', function(){
-    
+//$app -> post('/api/newUser/{name}/{email}/{gender}/{dob}/{username}/{user_type}/{pass}', function($name, $email, $gender, $dob, $username, $user_type, $pass){
+$app -> post('/api/newUser', function($request, $response){
     require_once('inc/db.php');
-
+    /*$name = $_POST['name'];
     $email = $_POST['email'];
-    $name = $_POST['name'];
     $gender = $_POST['gender'];
-    $date_of_birth = $_POST['date_of_birth'];
+    $date_of_birth = $_POST['dob'];
     $username = $_POST['username'];
     $user_type = $_POST['user_type'];
-    $pass = $_POST['pass'];
+    $pass = $_POST['pass'];*/
+    $name = $request->getParam('name');
+    $email = $request -> getParam('email');
+    $gender = $request -> getParam('gender');
+    $username = $request -> getParam('username');
+    $date_of_birth = $request -> getParam('dob');
+    $user_type = $request -> getParam('user_type');
+    $pass = $request -> getParam('pass');
+    $height = $request -> getParam('height');
+    $weight = $request -> getParam('weight');
+    $position = $request -> getParam('position');
+    $profile = $request -> getParam('profile');
     
-    $oupt = [];
-
     $query1 = "select _id from tbl_users where email='$email'";
     $result1 = $mysqli -> query($query1);
     $num1 = $result1 -> num_rows;
     if($num1 > 0){
-        $oupt['msg'] = "Email already exists";
+        echo json_encode(Array('isLogin' => '1'));
         exit;
     }
 
@@ -69,7 +77,7 @@ $app -> post('/api/newUser', function(){
     $result2 = $mysqli -> query($query2);
     $num2 = $result2 -> num_rows;
     if($num2 > 0){
-        $oupt['msg'] = "Username already exists";
+        echo json_encode(Array('isLogin' => '2'));
         exit;
     }
 
@@ -78,22 +86,22 @@ $app -> post('/api/newUser', function(){
     $row = $result -> fetch_assoc();
     $num = $result -> num_rows;
     if($num > 0){
-        $userID = $row['_id'];
-	    $userID = substr($userID, 4);
-	    $userID = str_pad(++$userID,4,'0',STR_PAD_LEFT);
-	    $userID = "PURL".$userID;
+        $id = $row['_id'];
+	    $id = substr($id, 4);
+	    $id = str_pad(++$id,4,'0',STR_PAD_LEFT);
+        $id = "PURL".$id;
     }else{
         $id = "PURL0001";
     }
     //$pass = password_hash($pass, PASSWORD_BCRYPT);
 
-    $query3 = "insert into tbl_users (_id, email, name, gender, date_of_birth, username, user_type, _hashed_password) values ('$id', '$email', '$name', '$gender', '$date_of_birth', '$username', '$user_type', '$pass')";
+    $query3 = "insert into tbl_users (_id, email, name, gender, date_of_birth, username, user_type, password, height, weight, position, profile) values ('$id', '$email', '$name', '$gender', '$date_of_birth', '$username', '$user_type', '$pass', '$height', '$weight', '$position', '$profile')";
     $result3 = $mysqli -> query($query3);
     if($result3){
-        $oupt['msg'] = "success";
+        echo json_encode(Array('isLogin' => '0'));
+        exit;
     }else{
-        $oupt['msg'] = "Error";
+        echo json_encode(Array('isLogin' => '3'));
     }
-    echo json_encode($oupt);
 
 });

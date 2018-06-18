@@ -689,7 +689,10 @@ public class EditProfileFragment extends Fragment implements UserManager.UserLis
     }
 
     @Override
-    public void onUserLogin(ParseUser user) {
+    /*public void onUserLogin(ParseUser user) {
+
+    }*/
+    public void onUserLogin() {
 
     }
 

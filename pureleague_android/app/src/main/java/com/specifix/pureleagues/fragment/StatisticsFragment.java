@@ -75,17 +75,17 @@ public class StatisticsFragment extends Fragment {
         mListView.setHasFixedSize(true);
         mListView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        long currentTeamId = UserManager.getInstance().getCurrentTeamId();
+        //long currentTeamId = UserManager.getInstance().getCurrentTeamId();
 
-        mTeams = UserManager.getInstance().getCurrentUser().getTeams();
+        //mTeams = UserManager.getInstance().getCurrentUser().getTeams();
 
         if (mTeams != null && mTeams.size() > 0) {
 
             for (int i = 0; i < mTeams.size(); i++) {
-                if (mTeams.get(i).getTeamId() == currentTeamId) {
+                /*if (mTeams.get(i).getTeamId() == currentTeamId) {
                     mCurrentTeam = i;
                     break;
-                }
+                }*/
             }
 
             List<String> spinnerList = new ArrayList<String>();

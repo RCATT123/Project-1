@@ -104,17 +104,17 @@ public class ResultsFragment extends Fragment
 //        mListView.setAdapter(mAdapter);
 
         if (DataManager.getInstance().getResults().size() == 0) {
-            long teamId = UserManager.getInstance().getCurrentTeamId();
+            /*long teamId = UserManager.getInstance().getCurrentTeamId();
             String teamName = "";
             for (Team team : DataManager.getInstance().getUserDivisionsTeams()) {
                 if (team.getTeamId() == teamId) {
                     teamName = team.getClub();
                     break;
                 }
-            }
+            }*/
 //            mListView.setVisibility(View.GONE);
             mViewPager.setVisibility(View.GONE);
-            mNoDataTextView.setText(String.format(getString(R.string.no_results_available), teamName));
+            //mNoDataTextView.setText(String.format(getString(R.string.no_results_available), teamName));
             mNoDataTextView.setVisibility(View.VISIBLE);
             mFooter.setVisibility(View.VISIBLE);
         } else {

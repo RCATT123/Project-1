@@ -103,25 +103,25 @@ public class TablesFragment extends Fragment {
                     String.valueOf(new Random().nextInt(100)),
                     String.valueOf(new Random().nextInt(100))));
         }*/
-        List<Team> userTeams = UserManager.getInstance().getCurrentUser().getTeams();
+        /*List<Team> userTeams = UserManager.getInstance().getCurrentUser().getTeams();
         if (userTeams == null || userTeams.size() == 0) {
             mAdapter = new TablesAdapter(new ArrayList<ClubStats>(), getContext());
             mListView.setAdapter(mAdapter);
             return;
-        }
+        }*/
 
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getContext());
-        List<Team> teams = UserManager.getInstance().getCurrentUser().getTeams();
+        /*List<Team> teams = UserManager.getInstance().getCurrentUser().getTeams();
         Team currentTeam = null;
         for (Team team : teams) {
             if (team.getTeamId() == sp.getLong(TEAM_ID, 0)) {
                 currentTeam = team;
             }
-        }
+        }*/
 
         mListView.setVisibility(View.GONE);
         mProgressBar.setVisibility(View.VISIBLE);
-        final Team finalCurrentTeam = currentTeam;
+        /*final Team finalCurrentTeam = currentTeam;
         if (currentTeam != null) {
             DataManager.getInstance().getClubs(getContext(), new DataManager.DataManagerPickListener() {
                 @Override
@@ -174,7 +174,7 @@ public class TablesFragment extends Fragment {
             mListView.setVisibility(View.VISIBLE);
             mProgressBar.setVisibility(View.GONE);
 //            mFooter.setVisibility(View.VISIBLE);
-        }
+        }*/
 
 //        mScrollView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
 //            public void onGlobalLayout() {

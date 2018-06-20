@@ -3,11 +3,9 @@ package com.specifix.pureleagues.api;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class WeatherApiClient {
-
-    public static final String BASE_URL = "http://dataservice.accuweather.com/";
+public class LivescoreApiClient {
+    public static final String BASE_URL = "http://livescore-api.com/api-client/";
     private static Retrofit retrofit = null;
-
     public static Retrofit getClient() {
         if (retrofit==null) {
             retrofit = new Retrofit.Builder()

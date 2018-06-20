@@ -29,11 +29,13 @@ $app -> get('/api/user/{username}/{password}', function($request, $response){
     $uname = $request -> getAttribute('username');
     $pass = $request -> getAttribute('password');
     
-    $query = "select _id, name, email, username, password, date_of_birth, gender, user_type from tbl_users where username='$uname' and _hashed_password='$pass'";
+    $query = "select _id from tbl_users where username='$uname' and password='$pass'";
     $result = $mysqli -> query($query);
     $num = $result -> num_rows;
     if($num > 0){
-        echo json_encode(Array('isLogin' => '1'));
+        $row = $result->fetch_assoc();
+        $userID = $row['_id'];
+        echo json_encode(Array('isLogin' => '1', 'userID' => $userID));
     }else{
         echo json_encode(Array('isLogin' => '0'));
     }
@@ -102,6 +104,29 @@ $app -> post('/api/newUser', function($request, $response){
         exit;
     }else{
         echo json_encode(Array('isLogin' => '3'));
+    }
+
+});
+
+$app -> put('/api/resetPassword/{email}/{pass}', function($request, $response){
+    require_once('inc/db.php');
+    $email = $request -> getAttribute('email');
+    $pass = $request -> getAttribute('pass');
+
+    $query = "select _id from tbl_users where email='$email'";
+    $result = $mysqli -> query($query);
+    $num = $result -> num_rows;
+    if(!$num > 0){
+        echo json_encode(Array('isLogin' => '1'));
+        exit;
+    }
+
+    $query1 = "update tbl_users set password='$pass' where email='$email'";
+    $result2 = $mysqli -> query($query1);
+    if($result2){
+        echo json_encode(Array('isLogin' => '0'));
+    }else{
+        echo json_encode(Array('isLogin' => '2'));
     }
 
 });

@@ -41,7 +41,7 @@ public class SplashActivity extends AppCompatActivity implements DataManager.Dat
             }
 //            sp.edit().putLong(TEAM_ID, Long.parseLong(getIntent().getStringExtra(PUSH_TEAM_ID))).apply();
         }
-        User user = UserManager.getInstance().getCurrentUser();
+        /*User user = UserManager.getInstance().getCurrentUser();
         if (user != null) {
             List<Team> teamList = user.getTeams();
             if (teamList.size() == 0) {
@@ -69,7 +69,8 @@ public class SplashActivity extends AppCompatActivity implements DataManager.Dat
             }
         } else {
             onFixturesReady();
-        }
+        }*/
+        onFixturesReady();
     }
 
     private void goToRegistrationActivity() {
@@ -104,11 +105,12 @@ public class SplashActivity extends AppCompatActivity implements DataManager.Dat
                 if (UserManager.getInstance().getCurrentUser() == null) {
                     goToRegistrationActivity();
                 } else {
-                    if (UserManager.getInstance().isUserCompleteRegistered()) {
+                    /*if (UserManager.getInstance().isUserCompleteRegistered()) {
                         goToMainActivity();
                     } else {
                         goToContinueRegistration();
-                    }
+                    }*/
+                    goToMainActivity();
                 }
             }
         }, SPLASH_DISPLAY_LENGTH);

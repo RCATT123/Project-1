@@ -111,7 +111,7 @@ public class GalleryFragment extends Fragment
     }
 
     public void updateGallery() {
-        DataManager.getInstance().updateGallery(getContext(), new DataManager.DataManagerListener() {
+        /*DataManager.getInstance().updateGallery(getContext(), new DataManager.DataManagerListener() {
             @Override
             public void onDataDownloaded() {
                 if (mMessages.size() == 0) {
@@ -129,7 +129,7 @@ public class GalleryFragment extends Fragment
                 mAdapter.notifyDataSetChanged();
                 mPreviewAdapter.notifyDataSetChanged();
             }
-        });
+        });*/
     }
 
     @OnClick(R.id.gallery_preview_arrow_left)

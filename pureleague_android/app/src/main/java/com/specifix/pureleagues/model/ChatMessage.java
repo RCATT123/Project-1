@@ -37,9 +37,9 @@ public class ChatMessage implements Parcelable {
     }
 
     public ChatMessage(String message, String imageUrl, long localDate) {
-        User currentUser = UserManager.getInstance().getCurrentUser();
-        this.author = currentUser.getUsername();
-        this.authorId = currentUser.getObjectId();
+        String currentUser = UserManager.getInstance().getCurrentUser();
+        //this.author = currentUser.getUsername();
+        //this.authorId = currentUser.getObjectId();
         this.message = message;
         this.localImageUrl = imageUrl;
         this.localDate = localDate;

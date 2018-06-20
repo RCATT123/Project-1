@@ -29,15 +29,19 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.model.LatLng;
-import com.parse.ParseAnonymousUtils;
-import com.parse.ParseLiveQueryClient;
-import com.parse.ParseUser;
+//import com.parse.ParseAnonymousUtils;
+//import com.parse.ParseLiveQueryClient;
+//import com.parse.ParseUser;
 import com.specifix.pureleagues.R;
 import com.specifix.pureleagues.adapter.DashboardFixturesAdapter;
+import com.specifix.pureleagues.api.ApiInterface;
 import com.specifix.pureleagues.api.DataManager;
+import com.specifix.pureleagues.api.LivescoreApiClient;
+import com.specifix.pureleagues.api.LivescoreApiInterface;
 import com.specifix.pureleagues.api.UserManager;
 import com.specifix.pureleagues.api.WeatherApiClient;
 import com.specifix.pureleagues.api.WeatherApiInterface;
+import com.specifix.pureleagues.api.model.FixtureResponse;
 import com.specifix.pureleagues.api.model.TemperatureResponse;
 import com.specifix.pureleagues.api.model.WeatherResponse;
 import com.specifix.pureleagues.manager.LocationManager;
@@ -47,6 +51,7 @@ import com.specifix.pureleagues.model.Fixture;
 import com.specifix.pureleagues.model.Result;
 import com.specifix.pureleagues.model.Team;
 import com.specifix.pureleagues.service.LocationService;
+import com.specifix.pureleagues.util.Login;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -111,7 +116,7 @@ public class DashboardFragment extends Fragment {
     TextView mNoDataTextView;
     private List<Object> mData;
     private DashboardFixturesAdapter mFixturesAdapter;
-    private AddressResultReceiver mResultReceiver;
+    //private AddressResultReceiver mResultReceiver;
     private LatLng mFixtureCoords;
     private DashboardFragmentListener mCallback;
     private Typeface gothamBold;
@@ -119,7 +124,7 @@ public class DashboardFragment extends Fragment {
     private int currentPosition = 0;
     private WeatherApiInterface mWeatherApiService;
     private String mWeatherUrl;
-    ParseLiveQueryClient mParseLiveQueryClient;
+    //ParseLiveQueryClient mParseLiveQueryClient;
     ProgressDialog progressDialog;
 
     public static DashboardFragment newInstance() {
@@ -153,7 +158,7 @@ public class DashboardFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getContext());
-        List<Team> teams = UserManager.getInstance().getCurrentUser().getTeams();
+        /*List<Team> teams = UserManager.getInstance().getCurrentUser().getTeams();
         if (teams.size() == 0) {
             return;
         }
@@ -185,7 +190,7 @@ public class DashboardFragment extends Fragment {
                 DashboardFragment.this.onMessageDownloaded(eventType, i);
             }
         });
-        DataManager.getInstance().updateGallery(getContext(), null);
+        DataManager.getInstance().updateGallery(getContext(), null);*/
 
         /*List<Team> teams = UserManager.getInstance().getCurrentUser().getTeams();
         if (teams != null) {
@@ -197,13 +202,12 @@ public class DashboardFragment extends Fragment {
             }, teams.get(0).getDivisionId());
         }*/
 
-        subscribeToNewMessages();
-
+        //subscribeToNewMessages();
         mWeatherApiService = WeatherApiClient.getClient().create(WeatherApiInterface.class);
     }
 
     private void subscribeToNewMessages() {
-        if (mParseLiveQueryClient != null) {
+        /* if (mParseLiveQueryClient != null) {
             return;
         }
         mParseLiveQueryClient = ParseLiveQueryClient.Factory.getClient();
@@ -234,7 +238,7 @@ public class DashboardFragment extends Fragment {
                         });
                     }
                 }
-        );
+        ); */
     }
 
     @Override
@@ -260,7 +264,7 @@ public class DashboardFragment extends Fragment {
         mUnreadMessagesLabel.setTypeface(gothamBold);
         mAllMessagesButton.setTypeface(gothamBold);
 
-        mFixturesAdapter = new DashboardFixturesAdapter(getChildFragmentManager(), mData);
+        /*mFixturesAdapter = new DashboardFixturesAdapter(getChildFragmentManager(), mData);
         mViewPager.setAdapter(mFixturesAdapter);
         mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -276,12 +280,12 @@ public class DashboardFragment extends Fragment {
             public void onPageScrollStateChanged(int state) {
 
             }
-        });
-        if (mData.size() == 0) {
+        });*/
+        //if (mData.size() == 0) {
 //            mArrowLeft.setVisibility(View.INVISIBLE);
 //            mArrowRight.setVisibility(View.INVISIBLE);
 
-            long teamId = UserManager.getInstance().getCurrentTeamId();
+            /*long teamId = UserManager.getInstance().getCurrentTeamId();
             String teamName = "";
             for (Team team : DataManager.getInstance().getUserDivisionsTeams()) {
                 if (team.getTeamId() == teamId) {
@@ -294,10 +298,9 @@ public class DashboardFragment extends Fragment {
             mNoDataTextView.setText(String.format(getString(R.string.no_fixtures_available), teamName));
             mMessagesBtn.setEnabled(false);
             mWeatherBtn.setEnabled(false);
-            mRouteBtn.setEnabled(false);
-        } else {
+            mRouteBtn.setEnabled(false);*/
+        /*} else {
             setFixtureInfoButtons(0);
-
 //            mArrowLeft.setVisibility(View.VISIBLE);
 //            mArrowRight.setVisibility(View.VISIBLE);
             mViewPager.setVisibility(View.VISIBLE);
@@ -305,14 +308,43 @@ public class DashboardFragment extends Fragment {
             mMessagesBtn.setEnabled(true);
             mWeatherBtn.setEnabled(true);
             mRouteBtn.setEnabled(true);
-        }
+        }*/
+
+        setFixtureInfoButtons(0);
+        mViewPager.setVisibility(View.VISIBLE);
+        mNoDataTextView.setVisibility(View.INVISIBLE);
+        mMessagesBtn.setEnabled(true);
+        mWeatherBtn.setEnabled(true);
+        mRouteBtn.setEnabled(true);
+
     }
 
     private void setFixtureInfoButtons(int position) {
-        Object item = mData.get(position);
-        String eventId = null;
 
-        List<ChatMessage> chatMessages = null;
+        /*
+         *  Get list of today fixtures from fixtures api
+         */
+
+        LivescoreApiInterface apiInterface = LivescoreApiClient.getClient().create(LivescoreApiInterface.class);
+        Call<FixtureResponse> mService = apiInterface.getFixtures("hs69NIS1e40ERK9u", "hadafcFjgykQnQWFj2O7LG8ZL8DDTN7b");
+        mService.enqueue(new Callback<FixtureResponse>() {
+            @Override
+            public void onResponse(Call<FixtureResponse> call, Response<FixtureResponse> response) {
+                System.out.println("DashboardFragment.onResponse == "+response.body());
+                FixtureResponse response1 = response.body();
+                List<Fixture> fixtures = response1.getFixtures();
+            }
+
+            @Override
+            public void onFailure(Call<FixtureResponse> call, Throwable t) {
+                call.cancel();
+                System.out.println("DashboardFragment.onFailure");
+            }
+        });
+        /*Object item = mData.get(position);
+        String eventId = null;*/
+
+        /* List<ChatMessage> chatMessages = null;
         if (item instanceof Fixture) {
             chatMessages = ((Fixture) item).getMessages();
             eventId = ((Fixture) item).getId();
@@ -342,9 +374,9 @@ public class DashboardFragment extends Fragment {
         mLocationMessages.setText(getMessageFormattedCount(chatMessages.size()));
 
         PrefsManager manager = new PrefsManager();
-        String lastMessageId = manager.getLastMessageId(eventId);
+        String lastMessageId = manager.getLastMessageId(eventId); */
 
-        if (UserManager.getInstance().getUserAge() < UserManager.MIN_ALLOWED_AGE) {
+        /*if (UserManager.getInstance().getUserAge() < UserManager.MIN_ALLOWED_AGE) {
             mUnreadMessages.setVisibility(View.GONE);
             mLatestMessagesContainer.setVisibility(View.GONE);
             mLatestMessagesLabel.setVisibility(View.GONE);
@@ -376,7 +408,7 @@ public class DashboardFragment extends Fragment {
                     mUnreadMessages.setText(getMessageFormattedCount(count));
                 }
             }
-        }
+        }*/
 
 //        Fixture fixture = mData.get(position);
 //        int unreadMessagesCount = 0;
@@ -396,10 +428,10 @@ public class DashboardFragment extends Fragment {
 //                        String.valueOf(unreadMessagesCount)));
 //        mLocationTemperature.setText(" °C");
 
-        mFixtureCoords = null;
-        mWeatherUrl = null;
+        /*mFixtureCoords = null;
+        mWeatherUrl = null;*/
 
-        if (mData.get(position) instanceof Fixture) {
+       /* if (mData.get(position) instanceof Fixture) {
             final Fixture fixture = (Fixture) (mData.get(position));
 
 //            if (!TextUtils.isEmpty(fixture.getWeather())) {
@@ -412,7 +444,7 @@ public class DashboardFragment extends Fragment {
 
 //            mFixtureCoords = fixture.getLocation();
 
-            if (TextUtils.isEmpty(fixture.getWeather())) {
+            /*if (TextUtils.isEmpty(fixture.getWeather())) {
 //            if (fixture.getLocation() == null) {
                 final int locationPosition = position;
                 LocationManager.findLocation(getContext(), fixture.getAddress(), new LocationManager.LocationReceiver() {
@@ -446,17 +478,17 @@ public class DashboardFragment extends Fragment {
 //                            }
                         }
                     }
-                });
+                });*//*
             } else {
-                mLocationTemperature.setText(fixture.getWeather());
+                //mLocationTemperature.setText(fixture.getWeather());
             }
-        } else if (mData.get(position) instanceof Result) {
+        /*} else if (mData.get(position) instanceof Result) {
             final Result result = (Result) (mData.get(position));
 
             if (!TextUtils.isEmpty(result.getWeather())) {
                 mLocationTemperature.setText(result.getWeather());
             }
-        }
+        }*/
         //startIntentService(position);
     }
 
@@ -486,7 +518,7 @@ public class DashboardFragment extends Fragment {
         }
     }
 
-    private List<ChatMessage> getLatestMessages(int fixtureNumber) {
+   /* private List<ChatMessage> getLatestMessages(int fixtureNumber) {
         Object item = mData.get(fixtureNumber);
 
         List<ChatMessage> messages = null;
@@ -504,7 +536,7 @@ public class DashboardFragment extends Fragment {
             return messages;
         }
         return messages.subList(0, 3);
-    }
+    } */
 
     private String getFormattedDate(long date) {
         String formattedDate;
@@ -548,10 +580,10 @@ public class DashboardFragment extends Fragment {
 
     @OnClick(R.id.dashboard_route_button)
     public void onRouteClick() {
-        if (ParseAnonymousUtils.isLinked(ParseUser.getCurrentUser())) {
+        /*if (ParseAnonymousUtils.isLinked(ParseUser.getCurrentUser())) {
             Toast.makeText(getContext(), R.string.register_error_message, Toast.LENGTH_SHORT).show();
             return;
-        }
+        }*/
         if (mFixtureCoords != null) {
             Intent intent = new Intent(
                     Intent.ACTION_VIEW,
@@ -677,11 +709,11 @@ public class DashboardFragment extends Fragment {
                                                                 .getValue();
 
                                                         if (mData != null && mData.size() != 0) {
-                                                            if (mData.get(currentPosition) instanceof Fixture) {
+                                                            /* if (mData.get(currentPosition) instanceof Fixture) {
                                                                 ((Fixture) mData.get(currentPosition)).setWeather(weather);
                                                             } else if (mData.get(currentPosition) instanceof Result) {
                                                                 ((Result) mData.get(currentPosition)).setWeather(weather);
-                                                            }
+                                                            } */
                                                         }
 
                                                         mLocationTemperature.setText(weather);
@@ -813,14 +845,14 @@ public class DashboardFragment extends Fragment {
     protected void startIntentService(int position) {
 //        if (getContext() != null && !getArguments().getBoolean(EXTRA_SHOW_ALL)) {
         if (getContext() != null) {
-            Intent intent = new Intent(getContext(), LocationService.class);
+            /*Intent intent = new Intent(getContext(), LocationService.class);
             intent.putExtra(LocationService.RECEIVER, mResultReceiver);
             if (mData.get(position) instanceof Fixture) {
                 intent.putExtra(LocationService.LOCATION_DATA_EXTRA, ((Fixture) (mData.get(position))).getAddress());
             } else {
                 showRouteDialog(mData.get(position));
             }
-            getContext().startService(intent);
+            getContext().startService(intent);*/
         }
     }
 
@@ -851,17 +883,17 @@ public class DashboardFragment extends Fragment {
         for (int i = 0; i < mData.size(); i++) {
             Object item = mData.get(i);
             if (item instanceof Fixture) {
-                matchId = ((Fixture) item).getMatch_id();
+                //matchId = ((Fixture) item).getMatch_id();
 //                objectId = ((Fixture) item).getId();
-                if (messageEventId == matchId) {
-                    ((Fixture) item).addMessage(message);
+                /*if (messageEventId == matchId) {
+                    //((Fixture) item).addMessage(message);
 
                     if (i == currentPosition) {
                         Log.d("PUSH FOR DASHBOARD", message.getMessage());
                         setFixtureInfoButtons(currentPosition);
                     }
                     break;
-                }
+                }*/
             } else if (item instanceof Result) {
                 matchId = ((Result) item).getMatch_id();
 //                objectId = ((Result) item).getId();
@@ -885,11 +917,11 @@ public class DashboardFragment extends Fragment {
             Object item = mData.get(position);
 
             List<ChatMessage> chatMessages = null;
-            if (item instanceof Fixture) {
+            /* if (item instanceof Fixture) {
                 chatMessages = ((Fixture) item).getMessages();
             } else if (item instanceof Result) {
                 chatMessages = ((Result) item).getMessages();
-            }
+            }*/
 
             if (chatMessages == null) {
                 chatMessages = new ArrayList<>();
@@ -906,7 +938,7 @@ public class DashboardFragment extends Fragment {
                 }
                 String fixtureObjectId = getActivity().getIntent().getStringExtra(LIST_POSITION);
                 for (Fixture fixture : DataManager.getInstance().getFixtures()) {
-                    if (fixture.getId().equals(fixtureObjectId)) {
+                    if (fixture.getLeague_id().equals(fixtureObjectId)) {
                         mCallback.onAllMessagesClick(type, fixture);
                         break;
                     }
@@ -946,7 +978,7 @@ public class DashboardFragment extends Fragment {
         mViewPager.setCurrentItem(mData.indexOf(fixture));
     }
 
-    private class AddressResultReceiver extends ResultReceiver {
+    /*private class AddressResultReceiver extends ResultReceiver {
 
         AddressResultReceiver(Handler handler) {
             super(handler);
@@ -1015,7 +1047,7 @@ public class DashboardFragment extends Fragment {
 //                );
             }
         }
-    }
+    }*/
 
     private String getMessageFormattedCount(int size) {
         return size < 100 ? String.valueOf(size) : "99+";

@@ -31,8 +31,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.parse.ParseAnonymousUtils;
-import com.parse.ParseUser;
+//import com.parse.ParseAnonymousUtils;
+//import com.parse.ParseUser;
 import com.specifix.pureleagues.R;
 import com.specifix.pureleagues.api.DataManager;
 import com.specifix.pureleagues.api.UserManager;
@@ -126,7 +126,7 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
 
         ButterKnife.bind(this);
-        mUserProfile = UserManager.getInstance().getCurrentUser();
+        //mUserProfile = UserManager.getInstance().getCurrentUser();
         mBackStack = new Stack<>();
 
         initToolbar();
@@ -206,14 +206,16 @@ public class MainActivity extends AppCompatActivity
             public void onReceive(Context context, Intent intent) {
                 ConnectivityManager cm = (ConnectivityManager)context.getSystemService(Context.CONNECTIVITY_SERVICE);
                 NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
-
                 if (activeNetwork != null) {
-                    DataManager.getInstance().downloadMessages(MainActivity.this, new DataManager.DataManagerUpdateListener() {
+                    /*
+                    Get list of messges by using datamanager class and get it from broadcast receiver
+                     */
+                    /* DataManager.getInstance().downloadMessages(MainActivity.this, new DataManager.DataManagerUpdateListener() {
                         @Override
                         public void onMessageDownloaded(String eventType, int i) {
                            //// TODO: 22.05.2017
                         }
-                    });
+                    }); */
                 }
             }
         };
@@ -227,7 +229,7 @@ public class MainActivity extends AppCompatActivity
         }
         mTeamColor.setVisibility(View.VISIBLE);
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
-        List<Team> teams = UserManager.getInstance().getCurrentUser().getTeams();
+        /* List<Team> teams = UserManager.getInstance().getCurrentUser().getTeams();
         long teamId = sp.getLong(TEAM_ID, 0);
         if (teamId == 0 && teams.size() == 1) {
             sp.edit().putLong(TEAM_ID, teams.get(0).getTeamId()).apply();
@@ -238,7 +240,7 @@ public class MainActivity extends AppCompatActivity
                 mTeamColor.setImageResource(
                         UserManager.getInstance().getTeamColorRes(team.getColor()));
             }
-        }
+        } */
     }
 
     private void initDrawer() {
@@ -263,13 +265,14 @@ public class MainActivity extends AppCompatActivity
         mDrawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
 
-        if (ParseAnonymousUtils.isLinked(ParseUser.getCurrentUser())) {
+        /*if (ParseAnonymousUtils.isLinked(ParseUser.getCurrentUser())) {
             mNavigationView.getMenu().getItem(1).setVisible(true);
             mNavigationView.getMenu().getItem(2).setVisible(false);
         } else {
             mNavigationView.getMenu().getItem(1).setVisible(false);
             mNavigationView.getMenu().getItem(2).setVisible(true);
-        }
+        }*/
+
         mNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -596,34 +599,34 @@ public class MainActivity extends AppCompatActivity
 
     @OnClick(R.id.tab_stats)
     public void onStatsTabClick() {
-        if (ParseAnonymousUtils.isLinked(ParseUser.getCurrentUser())) {
+        /*if (ParseAnonymousUtils.isLinked(ParseUser.getCurrentUser())) {
             Toast.makeText(this, R.string.register_error_message, Toast.LENGTH_SHORT).show();
             return;
-        }
+        }*/
         setTabSelected(mTabStats);
         replaceFragment(TAB_STATISTICS, false);
     }
 
     @OnClick(R.id.tab_gallery)
     public void onGalleryTabClick() {
-        if (ParseAnonymousUtils.isLinked(ParseUser.getCurrentUser())) {
+        /*if (ParseAnonymousUtils.isLinked(ParseUser.getCurrentUser())) {
             Toast.makeText(this, R.string.register_error_message, Toast.LENGTH_SHORT).show();
             return;
-        }
-        if (UserManager.getInstance().getUserAge() < UserManager.MIN_ALLOWED_AGE) {
+        }*/
+        /*if (UserManager.getInstance().getUserAge() < UserManager.MIN_ALLOWED_AGE) {
             Toast.makeText(this, R.string.min_age_not_reached_error_message, Toast.LENGTH_SHORT).show();
             return;
-        }
+        }*/
         setTabSelected(mTabGallery);
         replaceFragment(TAB_GALLERY, false);
     }
 
     @OnClick(R.id.tab_calendar)
     public void onCalendarTabClick() {
-        if (ParseAnonymousUtils.isLinked(ParseUser.getCurrentUser())) {
+        /*if (ParseAnonymousUtils.isLinked(ParseUser.getCurrentUser())) {
             Toast.makeText(this, R.string.register_error_message, Toast.LENGTH_SHORT).show();
             return;
-        }
+        }*/
         setTabSelected(mTabCalendar);
         replaceFragment(TAB_CALENDAR, false);
     }
@@ -631,10 +634,10 @@ public class MainActivity extends AppCompatActivity
 
     @OnClick(R.id.toolbar_team_color)
     public void onTeamColoursClick() {
-        if (ParseAnonymousUtils.isLinked(ParseUser.getCurrentUser())) {
+        /*if (ParseAnonymousUtils.isLinked(ParseUser.getCurrentUser())) {
             Toast.makeText(this, R.string.register_error_message, Toast.LENGTH_SHORT).show();
             return;
-        }
+        }*/
         replaceFragment(TAB_EDIT_PROFILE, true);
     }
 
@@ -654,7 +657,7 @@ public class MainActivity extends AppCompatActivity
     public void onTeamColoursChanged(String color, boolean backToDashboard) {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
         long teamId = sp.getLong(TEAM_ID, 0);
-        List<Team> teams = UserManager.getInstance().getCurrentUser().getTeams();
+        /*List<Team> teams = UserManager.getInstance().getCurrentUser().getTeams();
         UserManager.getInstance().setCurrentTeamId(teamId);
         for (Team team : teams) {
             if (team.getTeamId() == teamId) {
@@ -664,13 +667,13 @@ public class MainActivity extends AppCompatActivity
         }
         if (backToDashboard) {
             onDashboardClick();
-        }
+        }*/
     }
 
     @Override
     public void onTeamDeleted() {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
-        List<Team> teams = UserManager.getInstance().getCurrentUser().getTeams();
+        /*List<Team> teams = UserManager.getInstance().getCurrentUser().getTeams();
         if (teams != null && teams.size() > 0) {
             sp.edit().putLong(TEAM_ID, teams.get(0).getTeamId()).apply();
             UserManager.getInstance().setCurrentTeamId(teams.get(0).getTeamId());
@@ -694,24 +697,24 @@ public class MainActivity extends AppCompatActivity
             addTeamIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
             addTeamIntent.putExtra(ADD_TEAM_KEY, true);
             startActivity(addTeamIntent);
-        }
+        }*/
     }
 
     @Override
     public void onAllMessagesClick(String eventType, Object object) {
-        if (ParseAnonymousUtils.isLinked(ParseUser.getCurrentUser())) {
+        /*if (ParseAnonymousUtils.isLinked(ParseUser.getCurrentUser())) {
             Toast.makeText(this, R.string.register_error_message, Toast.LENGTH_SHORT).show();
             return;
-        }
-        if (UserManager.getInstance().getUserAge() < UserManager.MIN_ALLOWED_AGE) {
+        }*/
+        /*if (UserManager.getInstance().getUserAge() < UserManager.MIN_ALLOWED_AGE) {
             Toast.makeText(this, R.string.min_age_not_reached_error_message, Toast.LENGTH_SHORT).show();
             return;
-        }
+        }*/
         int index = -1;
         if (eventType.equals(EVENT_TYPE_FIXTURES)) {
             List<Fixture> fixtures = DataManager.getInstance().getFixtures();
             for (int i = 0; i < fixtures.size(); i++) {
-                if (fixtures.get(i).getId().equals(((Fixture)object).getId())) {
+                if (fixtures.get(i).getLeague_id().equals(((Fixture)object).getLeague_id())) {
                     index = i;
                     break;
                 }

@@ -126,17 +126,17 @@ public class FixturesFragment extends Fragment implements FixturesAdapter.Fixtur
 //        mListView.setAdapter(mAdapter);
 
         if (DataManager.getInstance().getFixtures().size() == 0) {
-            long teamId = UserManager.getInstance().getCurrentTeamId();
+            /*long teamId = UserManager.getInstance().getCurrentTeamId();
             String teamName = "";
             for (Team team : DataManager.getInstance().getUserDivisionsTeams()) {
                 if (team.getTeamId() == teamId) {
                     teamName = team.getClub();
                     break;
                 }
-            }
+            }*/
 //            mListView.setVisibility(View.GONE);
             mViewPager.setVisibility(View.GONE);
-            mNoDataTextView.setText(String.format(getString(R.string.no_fixtures_available), teamName));
+            //mNoDataTextView.setText(String.format(getString(R.string.no_fixtures_available), teamName));
             mNoDataTextView.setVisibility(View.VISIBLE);
             mFooter.setVisibility(View.VISIBLE);
         } else {

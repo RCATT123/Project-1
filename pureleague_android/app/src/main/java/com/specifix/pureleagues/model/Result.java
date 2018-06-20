@@ -12,6 +12,7 @@ import java.util.Comparator;
 import java.util.List;
 
 public class Result implements Parcelable {
+
     private String id;
     private long match_id;
     private long division_id;

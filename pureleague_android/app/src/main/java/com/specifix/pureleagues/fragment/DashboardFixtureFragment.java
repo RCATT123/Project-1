@@ -94,9 +94,9 @@ public class DashboardFixtureFragment extends Fragment {
 
         if (mData instanceof Fixture) {
             Fixture mFixture = (Fixture) mData;
-            mFixtureClubOne.setText(String.valueOf(mFixture.getClubOneName()));
-            mFixtureClubTwo.setText(String.valueOf(mFixture.getClubTwoName()));
-            mFixtureAddress.setText(mFixture.getAddress());
+            mFixtureClubOne.setText(String.valueOf(mFixture.getHome_name()));
+            mFixtureClubTwo.setText(String.valueOf(mFixture.getAway_name()));
+            mFixtureAddress.setText(mFixture.getlocation());
             mFixtureAddress.setVisibility(View.VISIBLE);
             mAddressPoint.setVisibility(View.VISIBLE);
             mFixtureDate.setText(mFixture.getFormatDate());

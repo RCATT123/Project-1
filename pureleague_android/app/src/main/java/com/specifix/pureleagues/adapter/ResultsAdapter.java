@@ -80,7 +80,7 @@ public class ResultsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             normalHolder.mClubScoreTwo.setText(mResultsList.get(position).getScoreTwo());
             normalHolder.mDate.setText(mResultsList.get(position).getFormatDate());
 
-            long teamId = UserManager.getInstance().getCurrentTeamId();
+            /*long teamId = UserManager.getInstance().getCurrentTeamId();
             if (mResultsList.get(position).getClubOneId() == teamId
                     || mResultsList.get(position).getClubTwoId() == teamId) {
                 setSelected(normalHolder, true);
@@ -88,7 +88,7 @@ public class ResultsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             } else {
                 setSelected(normalHolder, false);
                 normalHolder.mMessages.setVisibility(View.INVISIBLE);
-            }
+            }*/
         }
         /*
         boolean isUserTeam = false;

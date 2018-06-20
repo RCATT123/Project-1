@@ -12,9 +12,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.parse.ParseInstallation;
-import com.parse.ParsePush;
-import com.parse.ParseUser;
+//import com.parse.ParseInstallation;
+//import com.parse.ParsePush;
+//import com.parse.ParseUser;
 import com.specifix.pureleagues.R;
 import com.specifix.pureleagues.api.DataManager;
 import com.specifix.pureleagues.api.UserManager;
@@ -198,7 +198,7 @@ public class RegisterContinueActivity extends AppCompatActivity implements UserM
         intent.putExtra(PICKER_TITLE_KEY, getString(R.string.team_colors_title));
         intent.putExtra(PICKER_LAYOUT_TYPE_KEY, GRID_LAYOUT_TYPE);
         intent.putExtra(PICKER_DATA_TYPE_KEY, DATA_TEAM_COLOURS_TYPE);
-        intent.putExtra(PICKER_DATA_KEY, UserManager.getInstance().getTeamColorNames());
+        //intent.putExtra(PICKER_DATA_KEY, UserManager.getInstance().getTeamColorNames());
         startActivityForResult(intent, TEAM_COLOURS_PICK_RC);
     }
 
@@ -216,8 +216,7 @@ public class RegisterContinueActivity extends AppCompatActivity implements UserM
         if (!checkInputPartTwo()) {
             return;
         }
-
-        UserManager.getInstance().addTeam(mTeam, this);
+        //UserManager.getInstance().addTeam(mTeam, this);
         mSubmitBtn.setEnabled(false);
         mProgressDialog = new ProgressDialog(this);
         mProgressDialog.setMessage(getString(R.string.registering_message));
@@ -239,7 +238,7 @@ public class RegisterContinueActivity extends AppCompatActivity implements UserM
     /*public void onUserLogin(ParseUser user) {
 
     }*/
-    public void onUserLogin() {
+    public void onUserLogin(String userid) {
 
     }
 
@@ -255,7 +254,7 @@ public class RegisterContinueActivity extends AppCompatActivity implements UserM
     @Override
     public void onSuccess() {
         mSubmitBtn.setEnabled(true);
-        ParseInstallation installation = ParseInstallation.getCurrentInstallation();
+        /*ParseInstallation installation = ParseInstallation.getCurrentInstallation();
         installation.put("user", ParseUser.getCurrentUser());
         installation.saveInBackground();
         PreferenceManager.getDefaultSharedPreferences(this).edit().putLong(TEAM_ID, mTeam.getTeamId()).apply();
@@ -276,6 +275,6 @@ public class RegisterContinueActivity extends AppCompatActivity implements UserM
             public void onResultsReady() {
 
             }
-        });
+        });*/
     }
 }

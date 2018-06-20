@@ -34,7 +34,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.parse.ParseUser;
+//import com.parse.ParseUser;
 import com.specifix.pureleagues.R;
 import com.specifix.pureleagues.api.DataManager;
 import com.specifix.pureleagues.api.UserManager;
@@ -177,7 +177,7 @@ public class EditProfileFragment extends Fragment implements UserManager.UserLis
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        mUserProfile = UserManager.getInstance().getCurrentUser();
+        /*mUserProfile = UserManager.getInstance().getCurrentUser();
         if (mUserProfile.getHeight() == null) {
             mUserProfile.setHeight(String.valueOf(0));
         }
@@ -217,7 +217,7 @@ public class EditProfileFragment extends Fragment implements UserManager.UserLis
                         //.resize(Converter.dpToPx(mContext, 180), Converter.dpToPx(mContext, 180))
                         .centerInside()
                         .fit()
-                        .into(mProfilePhoto);*/
+                        .into(mProfilePhoto);*//*
                 Glide.with(getContext())
                         .load(imageUrl)
                         .centerCrop()
@@ -264,7 +264,7 @@ public class EditProfileFragment extends Fragment implements UserManager.UserLis
             mProfileLabel.setVisibility(View.GONE);
             mAboutMe.setVisibility(View.GONE);
             mAboutMeEditText.setVisibility(View.GONE);
-        }
+        }*/
     }
 
     public static Bitmap decodeSampledBitmapFromByteArray(byte[] data, int reqSize) {
@@ -330,7 +330,7 @@ public class EditProfileFragment extends Fragment implements UserManager.UserLis
                     mLoadingDialog.show();
 
                     sp.edit().putLong(TEAM_ID, team.getTeamId()).apply();
-                    UserManager.getInstance().setCurrentTeamId(team.getTeamId());
+                    //UserManager.getInstance().setCurrentTeamId(team.getTeamId());
                     DataManager.getInstance().downloadEvents(team, getContext(), new DataManager.DataManagerUpdateEvent() {
                         @Override
                         public void onFixturesReady() {
@@ -354,13 +354,13 @@ public class EditProfileFragment extends Fragment implements UserManager.UserLis
 
             clubName.setText(team.getClub());
             divisionName.setText(team.getDivision());
-            colours.setImageResource(UserManager.getInstance().getTeamColorRes(team.getColor()));
+            /*colours.setImageResource(UserManager.getInstance().getTeamColorRes(team.getColor()));
             clubSettings.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     mCallback.onEditTeamClick(team);
                 }
-            });
+            });*/
 
             mTeamsListContainer.addView(view);
         }
@@ -692,7 +692,7 @@ public class EditProfileFragment extends Fragment implements UserManager.UserLis
     /*public void onUserLogin(ParseUser user) {
 
     }*/
-    public void onUserLogin() {
+    public void onUserLogin(String userid) {
 
     }
 

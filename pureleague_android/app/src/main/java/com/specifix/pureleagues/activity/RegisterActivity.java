@@ -20,7 +20,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.parse.ParseUser;
+//import com.parse.ParseUser;
 import com.specifix.pureleagues.R;
 import com.specifix.pureleagues.api.UserManager;
 import com.specifix.pureleagues.model.User;
@@ -358,7 +358,7 @@ public class RegisterActivity extends AppCompatActivity implements UserManager.U
             mProgressDialog.dismiss();
         }
 
-        Intent intent = new Intent(RegisterActivity.this, RegisterContinueActivity.class);
+        Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
@@ -367,7 +367,7 @@ public class RegisterActivity extends AppCompatActivity implements UserManager.U
     /*public void onUserLogin(ParseUser user) {
 
     }*/
-    public void onUserLogin() {
+    public void onUserLogin(String userid) {
 
     }
 

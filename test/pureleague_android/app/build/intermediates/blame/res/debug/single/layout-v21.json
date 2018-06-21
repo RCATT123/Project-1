@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_icon_group.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\54decd857231ab17ceb32392d757d8eb3812484e\\output\\res\\layout-v21\\notification_template_icon_group.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action_tombstone.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\54decd857231ab17ceb32392d757d8eb3812484e\\output\\res\\layout-v21\\notification_action_tombstone.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\54decd857231ab17ceb32392d757d8eb3812484e\\output\\res\\layout-v21\\notification_action.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_custom_big.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\54decd857231ab17ceb32392d757d8eb3812484e\\output\\res\\layout-v21\\notification_template_custom_big.xml"
+    }
+]

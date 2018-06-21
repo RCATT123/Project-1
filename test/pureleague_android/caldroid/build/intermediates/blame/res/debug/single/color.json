@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\caldroid\\build\\intermediates\\res\\merged\\debug\\color\\cell_text_color.xml",
+        "source": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\caldroid\\src\\main\\res\\color\\cell_text_color.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\caldroid\\build\\intermediates\\res\\merged\\debug\\color\\cell_text_color_dark.xml",
+        "source": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\caldroid\\src\\main\\res\\color\\cell_text_color_dark.xml"
+    }
+]

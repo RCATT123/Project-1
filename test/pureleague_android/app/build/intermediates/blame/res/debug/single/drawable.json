@@ -1,0 +1,398 @@
+[
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\form_edit_text_selector.xml",
+        "source": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\src\\main\\res\\drawable\\form_edit_text_selector.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tab_background_selected.xml",
+        "source": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\src\\main\\res\\drawable\\tab_background_selected.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_default_mtrl_shape.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\54decd857231ab17ceb32392d757d8eb3812484e\\output\\res\\drawable\\abc_btn_default_mtrl_shape.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\item_calendar_grey.xml",
+        "source": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\src\\main\\res\\drawable\\item_calendar_grey.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_check_material.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\54decd857231ab17ceb32392d757d8eb3812484e\\output\\res\\drawable\\abc_btn_check_material.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\list_item_text_color_selector.xml",
+        "source": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\src\\main\\res\\drawable\\list_item_text_color_selector.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_text_dark_focused.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\aff7a05c11580509e75ed611b76a6cfdd047bee9\\output\\res\\drawable\\common_google_signin_btn_text_dark_focused.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\item_calendar_orange_small.xml",
+        "source": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\src\\main\\res\\drawable\\item_calendar_orange_small.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_dark_normal.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\aff7a05c11580509e75ed611b76a6cfdd047bee9\\output\\res\\drawable\\common_google_signin_btn_icon_dark_normal.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_track_material.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\54decd857231ab17ceb32392d757d8eb3812484e\\output\\res\\drawable\\abc_seekbar_track_material.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_tile_bg.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\54decd857231ab17ceb32392d757d8eb3812484e\\output\\res\\drawable\\notification_tile_bg.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_internal_bg.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\54decd857231ab17ceb32392d757d8eb3812484e\\output\\res\\drawable\\abc_cab_background_internal_bg.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_menu_overflow_material.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\54decd857231ab17ceb32392d757d8eb3812484e\\output\\res\\drawable\\abc_ic_menu_overflow_material.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_bg_low.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\54decd857231ab17ceb32392d757d8eb3812484e\\output\\res\\drawable\\notification_bg_low.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\form_picker_bg_pressed.xml",
+        "source": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\src\\main\\res\\drawable\\form_picker_bg_pressed.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_light.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\54decd857231ab17ceb32392d757d8eb3812484e\\output\\res\\drawable\\abc_item_background_holo_light.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_text_light_focused.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\aff7a05c11580509e75ed611b76a6cfdd047bee9\\output\\res\\drawable\\common_google_signin_btn_text_light_focused.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\background_splash.xml",
+        "source": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\src\\main\\res\\drawable\\background_splash.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_dark.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\aff7a05c11580509e75ed611b76a6cfdd047bee9\\output\\res\\drawable\\common_google_signin_btn_icon_dark.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\form_picker_selector.xml",
+        "source": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\src\\main\\res\\drawable\\form_picker_selector.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\gallery_tab_selector.xml",
+        "source": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\src\\main\\res\\drawable\\gallery_tab_selector.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_clear_material.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\54decd857231ab17ceb32392d757d8eb3812484e\\output\\res\\drawable\\abc_ic_clear_material.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_tab_indicator_material.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\54decd857231ab17ceb32392d757d8eb3812484e\\output\\res\\drawable\\abc_tab_indicator_material.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_vector_test.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\54decd857231ab17ceb32392d757d8eb3812484e\\output\\res\\drawable\\abc_vector_test.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\disabled_cell_dark.xml",
+        "source": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\caldroid\\build\\intermediates\\bundles\\default\\res\\drawable\\disabled_cell_dark.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tab_background_normal.xml",
+        "source": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\src\\main\\res\\drawable\\tab_background_normal.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_dark_focused.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\aff7a05c11580509e75ed611b76a6cfdd047bee9\\output\\res\\drawable\\common_google_signin_btn_icon_dark_focused.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_light.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\54decd857231ab17ceb32392d757d8eb3812484e\\output\\res\\drawable\\abc_list_selector_background_transition_holo_light.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\cell_bg_dark.xml",
+        "source": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\caldroid\\build\\intermediates\\bundles\\default\\res\\drawable\\cell_bg_dark.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_light.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\54decd857231ab17ceb32392d757d8eb3812484e\\output\\res\\drawable\\abc_list_selector_holo_light.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\red_border.xml",
+        "source": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\caldroid\\build\\intermediates\\bundles\\default\\res\\drawable\\red_border.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\design_fab_background.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\99b7ab35771e7912870cb0609a314c7c2b4a9abf\\output\\res\\drawable\\design_fab_background.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_dark.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\54decd857231ab17ceb32392d757d8eb3812484e\\output\\res\\drawable\\abc_list_selector_background_transition_holo_dark.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\design_password_eye.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\99b7ab35771e7912870cb0609a314c7c2b4a9abf\\output\\res\\drawable\\design_password_eye.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_icon_background.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\54decd857231ab17ceb32392d757d8eb3812484e\\output\\res\\drawable\\notification_icon_background.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_search_api_material.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\54decd857231ab17ceb32392d757d8eb3812484e\\output\\res\\drawable\\abc_ic_search_api_material.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_edit_text_material.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\54decd857231ab17ceb32392d757d8eb3812484e\\output\\res\\drawable\\abc_edit_text_material.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_borderless_material.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\54decd857231ab17ceb32392d757d8eb3812484e\\output\\res\\drawable\\abc_btn_borderless_material.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\item_calendar_orange.xml",
+        "source": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\src\\main\\res\\drawable\\item_calendar_orange.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\left_arrow.xml",
+        "source": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\caldroid\\build\\intermediates\\bundles\\default\\res\\drawable\\left_arrow.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_text_cursor_material.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\54decd857231ab17ceb32392d757d8eb3812484e\\output\\res\\drawable\\abc_text_cursor_material.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\contact_us_edittext_background.xml",
+        "source": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\src\\main\\res\\drawable\\contact_us_edittext_background.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_top_material.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\54decd857231ab17ceb32392d757d8eb3812484e\\output\\res\\drawable\\abc_cab_background_top_material.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\form_picker_bg_normal.xml",
+        "source": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\src\\main\\res\\drawable\\form_picker_bg_normal.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\short_colour_selector.xml",
+        "source": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\src\\main\\res\\drawable\\short_colour_selector.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\red_border_gray_bg.xml",
+        "source": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\caldroid\\build\\intermediates\\bundles\\default\\res\\drawable\\red_border_gray_bg.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\form_edit_text_bg_normal.xml",
+        "source": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\src\\main\\res\\drawable\\form_edit_text_bg_normal.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\short_colour_bg_pressed.xml",
+        "source": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\src\\main\\res\\drawable\\short_colour_bg_pressed.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\register_form_background.xml",
+        "source": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\src\\main\\res\\drawable\\register_form_background.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\form_edit_text_bg_focused.xml",
+        "source": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\src\\main\\res\\drawable\\form_edit_text_bg_focused.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\design_bottom_navigation_item_background.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\99b7ab35771e7912870cb0609a314c7c2b4a9abf\\output\\res\\drawable\\design_bottom_navigation_item_background.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_arrow_drop_right_black_24dp.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\54decd857231ab17ceb32392d757d8eb3812484e\\output\\res\\drawable\\abc_ic_arrow_drop_right_black_24dp.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\stats_tab_selector.xml",
+        "source": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\src\\main\\res\\drawable\\stats_tab_selector.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_spinner_textfield_background_material.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\54decd857231ab17ceb32392d757d8eb3812484e\\output\\res\\drawable\\abc_spinner_textfield_background_material.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_textfield_search_material.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\54decd857231ab17ceb32392d757d8eb3812484e\\output\\res\\drawable\\abc_textfield_search_material.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_light_focused.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\aff7a05c11580509e75ed611b76a6cfdd047bee9\\output\\res\\drawable\\common_google_signin_btn_icon_light_focused.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_text_light.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\aff7a05c11580509e75ed611b76a6cfdd047bee9\\output\\res\\drawable\\common_google_signin_btn_text_light.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_text_disabled.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\aff7a05c11580509e75ed611b76a6cfdd047bee9\\output\\res\\drawable\\common_google_signin_btn_text_disabled.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\fixtures_tab_selector.xml",
+        "source": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\src\\main\\res\\drawable\\fixtures_tab_selector.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_thumb_material.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\54decd857231ab17ceb32392d757d8eb3812484e\\output\\res\\drawable\\abc_seekbar_thumb_material.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tables_tab_selector.xml",
+        "source": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\src\\main\\res\\drawable\\tables_tab_selector.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_tick_mark_material.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\54decd857231ab17ceb32392d757d8eb3812484e\\output\\res\\drawable\\abc_seekbar_tick_mark_material.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_radio_material.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\54decd857231ab17ceb32392d757d8eb3812484e\\output\\res\\drawable\\abc_btn_radio_material.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\toolbar_background.xml",
+        "source": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\src\\main\\res\\drawable\\toolbar_background.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_dialog_material_background.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\54decd857231ab17ceb32392d757d8eb3812484e\\output\\res\\drawable\\abc_dialog_material_background.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_material.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\54decd857231ab17ceb32392d757d8eb3812484e\\output\\res\\drawable\\abc_ratingbar_material.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_dark.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\54decd857231ab17ceb32392d757d8eb3812484e\\output\\res\\drawable\\abc_item_background_holo_dark.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_text_light_normal.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\aff7a05c11580509e75ed611b76a6cfdd047bee9\\output\\res\\drawable\\common_google_signin_btn_text_light_normal.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_colored_material.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\54decd857231ab17ceb32392d757d8eb3812484e\\output\\res\\drawable\\abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_dark.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\54decd857231ab17ceb32392d757d8eb3812484e\\output\\res\\drawable\\abc_list_selector_holo_dark.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\short_colour_bg_normal.xml",
+        "source": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\src\\main\\res\\drawable\\short_colour_bg_normal.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\cell_bg.xml",
+        "source": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\caldroid\\build\\intermediates\\bundles\\default\\res\\drawable\\cell_bg.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_text_dark_normal.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\aff7a05c11580509e75ed611b76a6cfdd047bee9\\output\\res\\drawable\\common_google_signin_btn_text_dark_normal.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_go_search_api_material.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\54decd857231ab17ceb32392d757d8eb3812484e\\output\\res\\drawable\\abc_ic_go_search_api_material.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_text_dark.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\aff7a05c11580509e75ed611b76a6cfdd047bee9\\output\\res\\drawable\\common_google_signin_btn_text_dark.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_voice_search_api_material.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\54decd857231ab17ceb32392d757d8eb3812484e\\output\\res\\drawable\\abc_ic_voice_search_api_material.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_indicator_material.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\54decd857231ab17ceb32392d757d8eb3812484e\\output\\res\\drawable\\abc_ratingbar_indicator_material.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_bg.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\54decd857231ab17ceb32392d757d8eb3812484e\\output\\res\\drawable\\notification_bg.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\design_snackbar_background.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\99b7ab35771e7912870cb0609a314c7c2b4a9abf\\output\\res\\drawable\\design_snackbar_background.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_small_material.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\54decd857231ab17ceb32392d757d8eb3812484e\\output\\res\\drawable\\abc_ratingbar_small_material.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\item_calendar_grey_small.xml",
+        "source": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\src\\main\\res\\drawable\\item_calendar_grey_small.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\disable_cell.xml",
+        "source": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\caldroid\\build\\intermediates\\bundles\\default\\res\\drawable\\disable_cell.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\right_arrow.xml",
+        "source": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\caldroid\\build\\intermediates\\bundles\\default\\res\\drawable\\right_arrow.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\main_tabs_text_color_selector.xml",
+        "source": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\src\\main\\res\\drawable\\main_tabs_text_color_selector.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_light.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\aff7a05c11580509e75ed611b76a6cfdd047bee9\\output\\res\\drawable\\common_google_signin_btn_icon_light.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_light_normal.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\aff7a05c11580509e75ed611b76a6cfdd047bee9\\output\\res\\drawable\\common_google_signin_btn_icon_light_normal.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_disabled.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\aff7a05c11580509e75ed611b76a6cfdd047bee9\\output\\res\\drawable\\common_google_signin_btn_icon_disabled.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\form_picker_light_bg_pressed.xml",
+        "source": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\src\\main\\res\\drawable\\form_picker_light_bg_pressed.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\navigation_empty_icon.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\99b7ab35771e7912870cb0609a314c7c2b4a9abf\\output\\res\\drawable\\navigation_empty_icon.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\edit_profile_about_me_edit_text_background.xml",
+        "source": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\src\\main\\res\\drawable\\edit_profile_about_me_edit_text_background.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\form_picker_light_selector.xml",
+        "source": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\src\\main\\res\\drawable\\form_picker_light_selector.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\form_picker_light_bg_normal.xml",
+        "source": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\src\\main\\res\\drawable\\form_picker_light_bg_normal.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tab_background_selector.xml",
+        "source": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\src\\main\\res\\drawable\\tab_background_selector.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\results_tab_selector.xml",
+        "source": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\src\\main\\res\\drawable\\results_tab_selector.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\red_border_dark.xml",
+        "source": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\caldroid\\build\\intermediates\\bundles\\default\\res\\drawable\\red_border_dark.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\background_dialog.xml",
+        "source": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\src\\main\\res\\drawable\\background_dialog.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_switch_thumb_material.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\54decd857231ab17ceb32392d757d8eb3812484e\\output\\res\\drawable\\abc_switch_thumb_material.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\calendar_tab_selector.xml",
+        "source": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\src\\main\\res\\drawable\\calendar_tab_selector.xml"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_ab_back_material.xml",
+        "source": "C:\\Users\\admin\\.android\\build-cache\\54decd857231ab17ceb32392d757d8eb3812484e\\output\\res\\drawable\\abc_ic_ab_back_material.xml"
+    }
+]

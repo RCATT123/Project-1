@@ -1,0 +1,7 @@
+#Mon Jun 18 15:22:30 IST 2018
+base.0=D\:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_77a3b1635d29523ba7bf8308e0ad4a7e9250322c
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=D\:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_4afaebf11fc5f33ff03a53e2fdb882cb879ce6bd\\classes.dex
+base.1=D\:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_4afaebf11fc5f33ff03a53e2fdb882cb879ce6bd
+file.0=D\:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_77a3b1635d29523ba7bf8308e0ad4a7e9250322c\\classes.dex

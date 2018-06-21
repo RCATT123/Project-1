@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi\\ic_add_24dp.png",
+        "source": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_add_24dp.png"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi\\ic_keyboard_arrow_left_black_24dp.png",
+        "source": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_keyboard_arrow_left_black_24dp.png"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi\\ic_keyboard_arrow_right_black_24dp.png",
+        "source": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_keyboard_arrow_right_black_24dp.png"
+    }
+]

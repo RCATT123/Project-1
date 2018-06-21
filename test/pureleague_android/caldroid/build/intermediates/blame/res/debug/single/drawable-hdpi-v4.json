@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\caldroid\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\calendar_prev_arrow.png",
+        "source": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\caldroid\\src\\main\\res\\drawable-hdpi\\calendar_prev_arrow.png"
+    },
+    {
+        "merged": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\caldroid\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\calendar_next_arrow.png",
+        "source": "D:\\xampp\\htdocs\\PureLeague\\pureleague_android\\caldroid\\src\\main\\res\\drawable-hdpi\\calendar_next_arrow.png"
+    }
+]

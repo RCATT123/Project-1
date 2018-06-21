@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/toolbar"/>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/edit_profile_edit_text_view"
+        android:layout_alignRight="@+id/edit_profile_edit_text_view"
+        android:layout_below="@+id/edit_profile_edit_text_view"
+        android:layout_marginBottom="16dp"
+        android:background="@color/general_text_color"
+        android:orientation="vertical"
+        android:paddingBottom="8dp"
+        android:paddingTop="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/profile_height_label"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="4dp"
+                android:layout_marginRight="4dp"
+                android:layout_weight="1"
+                android:gravity="bottom|end"
+                android:text="@string/edit_profile_height_label"
+                android:textColor="@color/sub_color_3"
+                android:textSize="@dimen/edit_profile_labels_text_size" />
+
+            <EditText
+                android:id="@+id/profile_height_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginStart="4dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:ems="10"
+                android:inputType="number"
+                android:textColor="@color/title_white_text_color"
+                android:textSize="@dimen/edit_profile_data_text_size" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/profile_weight_label"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="4dp"
+                android:layout_marginRight="4dp"
+                android:layout_weight="1"
+                android:gravity="bottom|end"
+                android:text="@string/edit_profile_weight_label"
+                android:textColor="@color/sub_color_3"
+                android:textSize="@dimen/edit_profile_labels_text_size" />
+
+            <EditText
+                android:id="@+id/profile_weight_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginStart="4dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:ems="10"
+                android:inputType="number"
+                android:textColor="@color/title_white_text_color"
+                android:textSize="@dimen/edit_profile_data_text_size" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/profile_position_label"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="4dp"
+                android:layout_marginRight="4dp"
+                android:layout_weight="1"
+                android:gravity="bottom|end"
+                android:text="@string/edit_profile_position_label"
+                android:textColor="@color/sub_color_3"
+                android:textSize="@dimen/edit_profile_labels_text_size" />
+
+            <EditText
+                android:id="@+id/profile_position_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginStart="4dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/edit_profile_data_text_size" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/profile_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="16dp"
+        android:text="@string/edit_profile_profile_label"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:textColor="@color/general_text_color"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/profile_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@drawable/edit_profile_about_me_edit_text_background"
+        android:ems="10"
+        android:gravity="top"
+        android:minLines="7"
+        android:paddingBottom="8dp"
+        android:paddingEnd="12dp"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:paddingStart="12dp"
+        android:paddingTop="8dp"
+        android:textColor="@color/sub_color_1" />
+
+    <Button
+        android:id="@+id/profile_submit_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@color/background"
+        android:text="@string/submit_button_text"
+        android:textColor="@color/title_white_text_color" />
+
+</LinearLayout>

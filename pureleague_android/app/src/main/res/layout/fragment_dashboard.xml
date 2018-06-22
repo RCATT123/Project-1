@@ -21,8 +21,10 @@
             android:orientation="vertical">
 
             <FrameLayout
+                android:id="@+id/frmLayout"
                 android:layout_width="match_parent"
-                android:layout_height="214dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/dashboard_pager_background"
                 tools:visibility="visible">
 
@@ -164,6 +166,7 @@
                             android:layout_marginLeft="4dp"
                             android:layout_marginStart="4dp"
                             android:layout_weight="1"
+                            android:visibility="gone"
                             android:background="@drawable/dashboard_pager_button_background"
                             android:orientation="vertical">
 
@@ -250,6 +253,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
+                android:visibility="gone"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -290,6 +294,7 @@
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"
                     android:layout_marginStart="16dp"
+                    android:visibility="gone"
                     android:orientation="vertical" />
 
                 <Button
@@ -312,7 +317,7 @@
                 android:id="@+id/footer"
                 layout="@layout/footer_layout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"/>
 
         </LinearLayout>
 

@@ -213,4 +213,10 @@ Click on link below to download Pure League FREE app…….\nhttps://e6m2.app.li
     <string name="username_contains_spaces_error_message">Username cannot include spaces</string>
     <string name="take_photo">Take photo</string>
     <string name="choose_photo">Choose photo</string>
+
+
+    <!--- New Changes -->
+    <string name="liveApikey">hs69NIS1e40ERK9u</string>
+    <string name="liveSecretkey">hadafcFjgykQnQWFj2O7LG8ZL8DDTN7b</string>
+
 </resources>

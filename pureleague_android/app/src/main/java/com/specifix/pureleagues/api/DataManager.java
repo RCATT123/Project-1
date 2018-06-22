@@ -6,17 +6,17 @@ import android.net.NetworkInfo;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.parse.DeleteCallback;
-import com.parse.FindCallback;
-import com.parse.ParseException;
-import com.parse.ParseFile;
-import com.parse.ParseLiveQueryClient;
-import com.parse.ParseObject;
-import com.parse.ParseQuery;
-import com.parse.ProgressCallback;
-import com.parse.SaveCallback;
-import com.parse.SubscriptionHandling;
-import com.specifix.pureleagues.fragment.MessagesFragment;
+//import com.parse.DeleteCallback;
+//import com.parse.FindCallback;
+//import com.parse.ParseException;
+//import com.parse.ParseFile;
+//import com.parse.ParseLiveQueryClient;
+//import com.parse.ParseObject;
+//import com.parse.ParseQuery;
+//import com.parse.ProgressCallback;
+//import com.parse.SaveCallback;
+//import com.parse.SubscriptionHandling;
+//import com.specifix.pureleagues.fragment.MessagesFragment;
 import com.specifix.pureleagues.model.ChatMessage;
 import com.specifix.pureleagues.model.ClubStats;
 import com.specifix.pureleagues.model.Division;
@@ -105,7 +105,7 @@ public class DataManager {
     private static final String OBJECT_ID = "objectId";
 
     private static DataManager instance;
-    private List<ParseObject> mEvents;
+    //private List<ParseObject> mEvents;
     private List<Fixture> mFixtures;
     private List<Result> mResults;
     private List<ChatMessage> mGalleryMessages;
@@ -191,7 +191,7 @@ public class DataManager {
 //                    );
 //                }
 //                ParseQuery<ParseObject> fixturesParseQuery = ParseQuery.or(queriesList);
-                ParseQuery<ParseObject> parseQuery = ParseQuery
+                /*ParseQuery<ParseObject> parseQuery = ParseQuery
                         .getQuery(FIXTURE_TABLE)
                         .orderByAscending(FIXTURE_MATCH_DATE)
                         .whereEqualTo(FIXTURE_DIVISION_ID, team.getDivisionId())
@@ -334,7 +334,7 @@ public class DataManager {
 
                         listener.onResultsReady();
                     }
-                });
+                });*/
             }
         });
     }
@@ -352,7 +352,7 @@ public class DataManager {
 //                    .whereEqualTo(DIVISION_ID, team.getDivisionId())
 //            );
 //        }
-        ParseQuery<ParseObject> parseQuery = ParseQuery
+        /*ParseQuery<ParseObject> parseQuery = ParseQuery
                 .getQuery(TEAM_PARSE_CLASS_NAME)
                 .whereEqualTo(DIVISION_ID, team.getDivisionId());
 
@@ -387,19 +387,19 @@ public class DataManager {
                     }
                 });
             }
-        });
+        });*/
     }
 
     public void sendMessage(final String eventType, int listPosition, final String userMessage,
                             final byte[] imageToSave, final long currentDate, final long teamId, final DataManagerUpdateEvent listener) {
-        final User user = UserManager.getInstance().getCurrentUser();
+        final String user = UserManager.getInstance().getCurrentUser();
         final long matchId, divisionId;
         final String objectId, table;
 //        ParseObject event;
         if (eventType.equals(EVENT_TYPE_FIXTURES)) {
-            objectId = mFixtures.get(listPosition).getId();
-            matchId = mFixtures.get(listPosition).getMatch_id();
-            divisionId = mFixtures.get(listPosition).getDivision_id();
+            objectId = mFixtures.get(listPosition).getLeague_id();
+            /*matchId = mFixtures.get(listPosition).getLeague_id();
+            divisionId = mFixtures.get(listPosition).getLeague_id();*/
             table = FIXTURE_TABLE;
         } else {
             objectId = mResults.get(listPosition).getId();
@@ -409,7 +409,7 @@ public class DataManager {
         }
 
         //final long currentDate = new Date().getTime();
-        ParseQuery<ParseObject> query = ParseQuery.getQuery(table);
+        /*ParseQuery<ParseObject> query = ParseQuery.getQuery(table);
 
         //query.whereEqualTo(OBJECT_ID, objectId);
         query.whereEqualTo(FIXTURE_MATCH_ID, matchId);
@@ -431,7 +431,7 @@ public class DataManager {
                     message.put(EVENT_MESSAGE_PARENT_FIXTURE, event);
                 } else {
                     message.put(EVENT_MESSAGE_PARENT_RESULT, event);
-                }*/
+                }*//*
                 message.put(EVENT_MESSAGE_PARENT, castLong(event.get(FIXTURE_MATCH_ID))); //matchId
 
                 if (imageToSave != null) {
@@ -490,11 +490,11 @@ public class DataManager {
                     //updateGallery(null);
                 }
             }
-        });
+        });*/
 
     }
 
-    public void subscribeToNewMessages(final ParseLiveQueryClient mParseLiveQueryClient, final String eventType,
+    /*public void subscribeToNewMessages(final ParseLiveQueryClient mParseLiveQueryClient, final String eventType,
                                        int listPosition, final DataManagerNewMessageEvent listener) {
         final User user = UserManager.getInstance().getCurrentUser();
         final long matchId, divisionId;
@@ -546,9 +546,9 @@ public class DataManager {
             }
         });
 
-    }
+    }*/
 
-    public void updateFixtures(final String objectId, final DataManagerUpdateEvent messagesUpdateListener) {
+    /*public void updateFixtures(final String objectId, final DataManagerUpdateEvent messagesUpdateListener) {
         List<Team> userTeam = UserManager.getInstance().getCurrentUser().getTeams();
         if (userTeam == null || userTeam.size() == 0) {
             if (messagesUpdateListener != null)
@@ -558,7 +558,7 @@ public class DataManager {
 
         final long currentTeamId = UserManager.getInstance().getCurrentTeamId();
 
-        List<ParseQuery<ParseObject>> queriesList = new ArrayList<>();
+        /*List<ParseQuery<ParseObject>> queriesList = new ArrayList<>();
         for (Team team : userTeam) {
             queriesList.add(ParseQuery
                             .getQuery(FIXTURE_TABLE)
@@ -671,10 +671,10 @@ public class DataManager {
 
                 }
             }
-        });
-    }
+        });*//*
+    }*/
 
-    public void updateResults(final String objectId, final DataManagerUpdateEvent messagesUpdateListener) {
+    /*public void updateResults(final String objectId, final DataManagerUpdateEvent messagesUpdateListener) {
         List<Team> userTeam = UserManager.getInstance().getCurrentUser().getTeams();
         if (userTeam == null || userTeam.size() == 0) {
             if (messagesUpdateListener != null)
@@ -684,7 +684,7 @@ public class DataManager {
 
         final long currentTeamId = UserManager.getInstance().getCurrentTeamId();
 
-        List<ParseQuery<ParseObject>> queriesList = new ArrayList<>();
+        /*List<ParseQuery<ParseObject>> queriesList = new ArrayList<>();
         for (Team team : userTeam) {
             queriesList.add(ParseQuery
                     .getQuery(RESULTS_TABLE)
@@ -788,17 +788,17 @@ public class DataManager {
 
                 }
             }
-        });
-    }
+        });*//*
+    }*/
 
-    public void downloadMessages(Context context, final DataManagerUpdateListener listener) {
+    /*public void downloadMessages(Context context, final DataManagerUpdateListener listener) {
         final long currentTeamId = UserManager.getInstance().getCurrentTeamId();
 
         for (int i = 0; i < mFixtures.size(); i++) {
             final Fixture fixture = mFixtures.get(i);
             final int position = i;
 
-            ParseQuery<ParseObject> query = ParseQuery.getQuery(EVENT_MESSAGE_PARSE_CLASS_NAME);
+            /*ParseQuery<ParseObject> query = ParseQuery.getQuery(EVENT_MESSAGE_PARSE_CLASS_NAME);
 //            query.whereContains(EVENT_MESSAGE_PARENT_FIXTURE, fixture.getId());
             query.whereEqualTo(EVENT_MESSAGE_PARENT, fixture.getMatch_id());
             query.whereEqualTo(EVENT_MESSAGE_TEAM_ID, currentTeamId);
@@ -845,14 +845,14 @@ public class DataManager {
                         listener.onMessageDownloaded(MessagesFragment.EVENT_TYPE_FIXTURES, mClubFixtures.indexOf(fixture));
                     }
                 }
-            });
+            });*//*
         }
 
         for (int i = 0; i < mResults.size(); i++) {
             final Result result = mResults.get(i);
             final int position = i;
 
-            ParseQuery<ParseObject> query = ParseQuery.getQuery(EVENT_MESSAGE_PARSE_CLASS_NAME);
+            /*ParseQuery<ParseObject> query = ParseQuery.getQuery(EVENT_MESSAGE_PARSE_CLASS_NAME);
 //            query.whereContains(EVENT_MESSAGE_PARENT_RESULT, result.getId());
             query.whereEqualTo(EVENT_MESSAGE_PARENT, result.getMatch_id());
             query.whereEqualTo(EVENT_MESSAGE_TEAM_ID, currentTeamId);
@@ -896,13 +896,13 @@ public class DataManager {
 
                     listener.onMessageDownloaded(MessagesFragment.EVENT_TYPE_RESULTS, position);
                 }
-            });
+            });*//*
         }
-    }
+    }*/
 
     private long lastSelectedTeam = -1;
 
-    public void updateGallery(Context context, final DataManagerListener listener) {
+    /*public void updateGallery(Context context, final DataManagerListener listener) {
         final long currentTeamId = UserManager.getInstance().getCurrentTeamId();
         if (lastSelectedTeam != currentTeamId) {
             mGalleryMessages.clear();
@@ -912,7 +912,7 @@ public class DataManager {
         if (UserManager.getInstance().getCurrentUser() == null)
             return;
 
-        ParseQuery<ParseObject> query = ParseQuery.getQuery(EVENT_MESSAGE_PARSE_CLASS_NAME);
+        /*ParseQuery<ParseObject> query = ParseQuery.getQuery(EVENT_MESSAGE_PARSE_CLASS_NAME);
         //query.whereExists(EVENT_MESSAGE_IMAGE_FILE);
         query.whereExists(EVENT_MESSAGE_IMAGE_URL);
 //        query.whereEqualTo(EVENT_MESSAGE_AUTHOR_OBJECT_ID,
@@ -965,13 +965,13 @@ public class DataManager {
                     listener.onDataDownloaded();
                 }
             }
-        });
+        });*//*
 
-    }
+    }*/
 
     public void downloadClubStats(final Team team, Context context, final List<Team> allTeams, final DataManagerPickListener listener) {
 
-        ParseQuery<ParseObject> query = ParseQuery.getQuery(RESULTS_TABLE_TABLE);
+        /*ParseQuery<ParseObject> query = ParseQuery.getQuery(RESULTS_TABLE_TABLE);
         query.whereEqualTo(RESULTS_TABLE_DIVISION_ID, team.getDivisionId());
         if (!isConnectionAvailable(context)) {
             query.fromPin("ResultsTable_" + team.getClub());
@@ -1018,17 +1018,17 @@ public class DataManager {
                 if (listener != null)
                     listener.onListReady(mClubStats);
             }
-        });
+        });*/
     }
 
     public void downloadScorers(Context context, final List<Team> allTeams, final long divisionId, long teamId, final DataManagerPickListener listener) {
-        User user = UserManager.getInstance().getCurrentUser();
-        final List<Team> teams = user.getTeams();
+        String user = UserManager.getInstance().getCurrentUser();
+        /*final List<Team> teams = user.getTeams();
         if (teams == null) {
             return;
-        }
+        }*/
         //Team currentTeam = teams.get(0);
-        ParseQuery<ParseObject> query = ParseQuery.getQuery(SCORER_TABLE);
+        /*ParseQuery<ParseObject> query = ParseQuery.getQuery(SCORER_TABLE);
         query.whereEqualTo(SCORER_DIVISION_ID, divisionId);
         if (teamId != -1) {
             query.whereEqualTo(SCORER_TEAM_ID, teamId);
@@ -1094,12 +1094,12 @@ public class DataManager {
                 if (listener != null)
                     listener.onListReady(mScores);
             }
-        });
+        });*/
     }
 
 
     public void getAssociations(final DataManagerPickListener listener, String pattern) {
-        ParseQuery<ParseObject> query = ParseQuery.getQuery(ASSOCIATION_PARSE_CLASS_NAME);
+        /*ParseQuery<ParseObject> query = ParseQuery.getQuery(ASSOCIATION_PARSE_CLASS_NAME);
         if (!pattern.equals("")) {
             query.whereMatches(ASSOCIATION_NAME, "(" + pattern + ")", "i");
         }
@@ -1123,11 +1123,11 @@ public class DataManager {
                     listener.onError("Connection error");
                 }
             }
-        });
+        });*/
     }
 
     public void getDivisions(final DataManagerPickListener listener, long associationId) {
-        ParseQuery<ParseObject> query = ParseQuery.getQuery(DIVISION_PARSE_CLASS_NAME);
+        /*ParseQuery<ParseObject> query = ParseQuery.getQuery(DIVISION_PARSE_CLASS_NAME);
         query.whereEqualTo(ASSOCIATION_ID, associationId);
         query.orderByAscending(DIVISION_NAME);
         query.findInBackground(new FindCallback<ParseObject>() {
@@ -1149,7 +1149,7 @@ public class DataManager {
                     listener.onError("Connection error");
                 }
             }
-        });
+        });*/
     }
 
     public void getClubs(Context context, final DataManagerPickListener listener, final long divisionId) {
@@ -1158,7 +1158,7 @@ public class DataManager {
             return;
         }*/
 
-        ParseQuery<ParseObject> query = ParseQuery.getQuery(TEAM_PARSE_CLASS_NAME);
+        /*ParseQuery<ParseObject> query = ParseQuery.getQuery(TEAM_PARSE_CLASS_NAME);
         query.orderByAscending(TEAM_NAME);
         query.whereEqualTo(DIVISION_ID, divisionId);
         if (!isConnectionAvailable(context)) {
@@ -1193,7 +1193,7 @@ public class DataManager {
 
                 listener.onListReady(mTeams);
             }
-        });
+        });*/
     }
 
     public boolean isConnectionAvailable(Context context) {
@@ -1219,12 +1219,12 @@ public class DataManager {
             mFixtures = new ArrayList<>();
         }
         for (Fixture fixture : mFixtures) {
-            if (fixture.getClubOneId() == team.getTeamId()) {
+            /*if (fixture.getClubOneId() == team.getTeamId()) {
                 mClubFixtures.add(fixture);
             }
             if (fixture.getClubTwoId() == team.getTeamId()) {
                 mClubFixtures.add(fixture);
-            }
+            }*/
         }
         return mClubFixtures;
     }

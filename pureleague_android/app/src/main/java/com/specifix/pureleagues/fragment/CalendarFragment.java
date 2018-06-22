@@ -112,7 +112,7 @@ public class CalendarFragment extends Fragment {
             Drawable resBg1 = ContextCompat.getDrawable(getContext(), R.drawable.item_calendar_orange);
             Drawable resBg2 = ContextCompat.getDrawable(getContext(), R.drawable.item_calendar_grey);
 
-            long currentTeamId = UserManager.getInstance().getCurrentTeamId();
+            /*long currentTeamId = UserManager.getInstance().getCurrentTeamId();
             Map<String, Object> extraData = new HashMap<>();
             List<Result> results = DataManager.getInstance().getResults();
             for (Result result : results) {
@@ -139,7 +139,7 @@ public class CalendarFragment extends Fragment {
                 }
             }
 
-            calendarFragment.setExtraData(extraData);
+            calendarFragment.setExtraData(extraData);*/
         }
     }
 

@@ -20,8 +20,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.model.LatLng;
-import com.parse.ParseAnonymousUtils;
-import com.parse.ParseUser;
+//import com.parse.ParseAnonymousUtils;
+//import com.parse.ParseUser;
 import com.specifix.pureleagues.R;
 import com.specifix.pureleagues.api.UserManager;
 import com.specifix.pureleagues.manager.LocationManager;
@@ -97,12 +97,12 @@ public class FixturesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         if (holder instanceof DataViewHolder) {
             DataViewHolder normalHolder = (DataViewHolder) holder;
-            normalHolder.mFirstTeam.setText(String.valueOf(mFixturesList.get(position).getClubOneName()));
-            normalHolder.mSecondTeam.setText(String.valueOf(mFixturesList.get(position).getClubTwoName()));
+            normalHolder.mFirstTeam.setText(String.valueOf(mFixturesList.get(position).getHome_name()));
+            normalHolder.mSecondTeam.setText(String.valueOf(mFixturesList.get(position).getAway_name()));
             normalHolder.mTime.setText(mFixturesList.get(position).getTime());
             normalHolder.mDate.setText(mFixturesList.get(position).getFormatDate());
 
-            long teamId = UserManager.getInstance().getCurrentTeamId();
+            /*long teamId = UserManager.getInstance().getCurrentTeamId();
             if (mFixturesList.get(position).getClubOneId() == teamId
                     || mFixturesList.get(position).getClubTwoId() == teamId) {
                 setSelected(normalHolder, true);
@@ -110,7 +110,7 @@ public class FixturesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             } else {
                 setSelected(normalHolder, false);
                 normalHolder.mMessages.setVisibility(View.INVISIBLE);
-            }
+            }*/
         }
         /*boolean isUserTeam = false;
         for (Team userTeam : UserManager.getInstance().getCurrentUser().getTeams()) {
@@ -167,10 +167,10 @@ public class FixturesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         if (mContext == null)
             return;
 
-        if (ParseAnonymousUtils.isLinked(ParseUser.getCurrentUser())) {
+        /*if (ParseAnonymousUtils.isLinked(ParseUser.getCurrentUser())) {
             Toast.makeText(mContext, R.string.register_error_message, Toast.LENGTH_SHORT).show();
             return;
-        }
+        }*/
 
         showRouteDialog(null);
 //        if (mFixturesList.get(position).getAddress() == null

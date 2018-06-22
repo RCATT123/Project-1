@@ -106,7 +106,7 @@ public class TablesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
             dataHolder.mPoints.setText(String.valueOf(mStatsList.get(position).getPoints()));
 
             boolean isUserTeam = false;
-            for (Team userTeam : UserManager.getInstance().getCurrentUser().getTeams()) {
+            /*for (Team userTeam : UserManager.getInstance().getCurrentUser().getTeams()) {
                 if (mStatsList.get(position).getClubId() == userTeam.getTeamId()) {
                     isUserTeam = true;
                     setSelected(dataHolder, true);
@@ -114,7 +114,7 @@ public class TablesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
             }
             if (!isUserTeam) {
                 setSelected(dataHolder, false);
-            }
+            }*/
         }
     }
 

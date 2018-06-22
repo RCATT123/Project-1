@@ -9,10 +9,10 @@ import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.parse.LogInCallback;
-import com.parse.ParseAnonymousUtils;
-import com.parse.ParseException;
-import com.parse.ParseUser;
+//import com.parse.LogInCallback;
+//import com.parse.ParseAnonymousUtils;
+//import com.parse.ParseException;
+//import com.parse.ParseUser;
 import com.specifix.pureleagues.R;
 
 import butterknife.BindView;
@@ -64,7 +64,7 @@ public class WelcomeActivity extends AppCompatActivity{
             mLoginBtn.setText(R.string.yes_text);
             mAddTeamBtn.setText(R.string.no_text);
         } else {
-            ParseAnonymousUtils.logIn(new LogInCallback() {
+            /*ParseAnonymousUtils.logIn(new LogInCallback() {
                 @Override
                 public void done(ParseUser user, ParseException e) {
                     if (e != null) {
@@ -75,7 +75,7 @@ public class WelcomeActivity extends AppCompatActivity{
                         startActivity(addTeamIntent);
                     }
                 }
-            });
+            });*/
         }
     }
 

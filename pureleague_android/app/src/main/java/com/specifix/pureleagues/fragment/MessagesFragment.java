@@ -41,11 +41,11 @@ import android.widget.Toast;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.Glide;
-import com.parse.FunctionCallback;
-import com.parse.ParseCloud;
-import com.parse.ParseException;
-import com.parse.ParseInstallation;
-import com.parse.ParseLiveQueryClient;
+//import com.parse.FunctionCallback;
+//import com.parse.ParseCloud;
+//import com.parse.ParseException;
+//import com.parse.ParseInstallation;
+//import com.parse.ParseLiveQueryClient;
 import com.specifix.pureleagues.R;
 import com.specifix.pureleagues.activity.PhotoPickerFragment;
 import com.specifix.pureleagues.adapter.MessagesAdapter;
@@ -107,7 +107,7 @@ public class MessagesFragment extends PhotoPickerFragment {
     private List<ChatMessage> mMessagesList;
     //private Bitmap pickedImage;
     Uri mImageUri;
-    ParseLiveQueryClient mParseLiveQueryClient;
+    //ParseLiveQueryClient mParseLiveQueryClient;
 
     public static MessagesFragment newInstance(String eventType, int position) {
         MessagesFragment fragment = new MessagesFragment();
@@ -127,8 +127,8 @@ public class MessagesFragment extends PhotoPickerFragment {
         mEventType = args.getString(EVENT_TYPE_KEY);
         mEventListPosition = args.getInt(EVENT_LIST_POSITION_KEY);
 
-        mParseLiveQueryClient = ParseLiveQueryClient.Factory.getClient();
-        DataManager.getInstance().subscribeToNewMessages(
+        //mParseLiveQueryClient = ParseLiveQueryClient.Factory.getClient();
+        /*DataManager.getInstance().subscribeToNewMessages(
                 mParseLiveQueryClient,
                 getArguments().getString(EVENT_TYPE_KEY),
                 getArguments().getInt(EVENT_LIST_POSITION_KEY),
@@ -143,7 +143,7 @@ public class MessagesFragment extends PhotoPickerFragment {
                         updateMessages(message);
                     }
                 }
-        );
+        );*/
     }
 
     @Override
@@ -222,9 +222,9 @@ public class MessagesFragment extends PhotoPickerFragment {
         mRecyclerView.setLayoutManager(layoutManager);
         //List<ChatMessage> messagesList;
         if (mEventType.equals(EVENT_TYPE_FIXTURES)) {
-            mMessagesList = DataManager.getInstance().getFixtures().get(mEventListPosition).getMessages();
+            //mMessagesList = DataManager.getInstance().getFixtures().get(mEventListPosition).getMessages();
             if (mMessagesList == null || mMessagesList.size() == 0) {
-                DataManager.getInstance().updateFixtures(
+                /*DataManager.getInstance().updateFixtures(
                         DataManager.getInstance().getFixtures().get(mEventListPosition).getId(),
                         new DataManager.DataManagerUpdateEvent() {
                             @Override
@@ -251,7 +251,7 @@ public class MessagesFragment extends PhotoPickerFragment {
                             public void onResultsReady() {
 
                             }
-                        });
+                        });*/
             } else {
                 mProgressBar.setVisibility(View.GONE);
                 mAdapter = new MessagesAdapter(getContext(),
@@ -272,7 +272,7 @@ public class MessagesFragment extends PhotoPickerFragment {
         } else {
             mMessagesList = DataManager.getInstance().getResults().get(mEventListPosition).getMessages();
             if (mMessagesList == null || mMessagesList.size() == 0) {
-                DataManager.getInstance().updateResults(
+                /*DataManager.getInstance().updateResults(
                         DataManager.getInstance().getResults().get(mEventListPosition).getId(),
                         new DataManager.DataManagerUpdateEvent() {
                             @Override
@@ -299,7 +299,7 @@ public class MessagesFragment extends PhotoPickerFragment {
                                     saveLastMessageId(mMessagesList.get(0).getObjectId());
                                 }
                             }
-                        });
+                        });*/
             } else {
                 mProgressBar.setVisibility(View.GONE);
                 mAdapter = new MessagesAdapter(getContext(),
@@ -341,10 +341,10 @@ public class MessagesFragment extends PhotoPickerFragment {
         }
         final String messageText = mNewMessageEditText.getText().toString();
         final long currentDate = new Date().getTime();
-        final long currentTeamId = UserManager.getInstance().getCurrentTeamId();
+        /*final long currentTeamId = UserManager.getInstance().getCurrentTeamId();
         if (messageText.equals("") && mImageUri == null) {
             return;
-        }
+        }*/
         if (!DataManager.getInstance().isConnectionAvailable(getContext())) {
             Toast.makeText(getContext(), getString(R.string.no_connection_message), Toast.LENGTH_SHORT).show();
             return;
@@ -363,11 +363,11 @@ public class MessagesFragment extends PhotoPickerFragment {
                 Toast.makeText(getContext(), "Failed to upload photo", Toast.LENGTH_SHORT).show();
             }
 
-            DataManager.getInstance().sendMessage(
+            /*DataManager.getInstance().sendMessage(
                     getArguments().getString(EVENT_TYPE_KEY),
                     getArguments().getInt(EVENT_LIST_POSITION_KEY),
                     messageText, byteArray, currentDate, currentTeamId, null
-            );
+            );*/
 
 //            new Thread() {
 //                DataManager.DataManagerUpdateEvent listener;
@@ -447,12 +447,12 @@ public class MessagesFragment extends PhotoPickerFragment {
 //            }.start();
 //            }.addListener(this).start();
         } else {
-            DataManager.getInstance().sendMessage(
+            /*DataManager.getInstance().sendMessage(
                     getArguments().getString(EVENT_TYPE_KEY),
                     getArguments().getInt(EVENT_LIST_POSITION_KEY),
 //                    messageText, null, currentDate, currentTeamId, this
                     messageText, null, currentDate, currentTeamId, null
-            );
+            );*/
         }
         //Display message immediately
 
@@ -465,7 +465,7 @@ public class MessagesFragment extends PhotoPickerFragment {
         mAdapter.notifyItemInserted(0);
         mRecyclerView.scrollToPosition(0);
 
-        String teamName = "";
+        /*String teamName = "";
         for (Team team :
                 UserManager.getInstance().getCurrentUser().getTeams()) {
             if (team.getTeamId() == currentTeamId) {
@@ -482,15 +482,15 @@ public class MessagesFragment extends PhotoPickerFragment {
         params.put("message", messageText.equals("") ? "[New image]" : messageText);
         params.put("title", teamName);
         params.put("eventType", mEventType);
-        params.put("senderId", UserManager.getInstance().getCurrentUser().getObjectId());
+        params.put("senderId", UserManager.getInstance().getCurrentUser().getObjectId());*/
 
         String objectId;
         if (mEventType.equals(EVENT_TYPE_FIXTURES)) {
-            objectId = DataManager.getInstance().getFixtures().get(mEventListPosition).getId();
+            objectId = DataManager.getInstance().getFixtures().get(mEventListPosition).getLeague_id();
         } else {
             objectId = DataManager.getInstance().getResults().get(mEventListPosition).getId();
         }
-        params.put("position", objectId);
+        /*params.put("position", objectId);
 //        params.put("position", String.valueOf(mEventListPosition));
         params.put("teamId", String.valueOf(PreferenceManager.getDefaultSharedPreferences(getContext()).getLong(TEAM_ID, -1)));
         ParseCloud.callFunctionInBackground("push", params, new FunctionCallback<Object>() {
@@ -498,7 +498,7 @@ public class MessagesFragment extends PhotoPickerFragment {
             public void done(Object object, ParseException e) {
 
             }
-        });
+        });*/
     }
 
     @OnClick(R.id.messages_new_image)
@@ -769,7 +769,7 @@ public class MessagesFragment extends PhotoPickerFragment {
 
     private void saveLastMessageId(String messageId) {
         String eventId = mEventType.equals(EVENT_TYPE_FIXTURES)
-                ? DataManager.getInstance().getFixtures().get(mEventListPosition).getId()
+                ? DataManager.getInstance().getFixtures().get(mEventListPosition).getLeague_id()
                 : DataManager.getInstance().getResults().get(mEventListPosition).getId();
 
         PrefsManager pm = new PrefsManager();

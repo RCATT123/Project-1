@@ -15,7 +15,8 @@ import java.util.List;
 import java.util.Locale;
 
 public class Fixture implements Parcelable {
-    private String id;
+
+    /* private String id;
     private long match_id;
     private long division_id;
     private String address;
@@ -24,104 +25,69 @@ public class Fixture implements Parcelable {
     private String clubOneName;
     private String clubTwoName;
     private String date;
-    private Calendar calendar;
     //private String time;
     private LatLng location;
     private String weather;
     private String weatherUrl;
-    private List<ChatMessage> messages;
+    private List<ChatMessage> messages; */
 
-    public Fixture(String id, long match_id, long division_id, String address, long clubOneId, long clubTwoId, String clubOneName, String clubTwoName, String date) {
-        this.id = id;
-        this.match_id = match_id;
-        this.division_id = division_id;
-        this.address = address;
-        this.clubOneId = clubOneId;
-        this.clubTwoId = clubTwoId;
-        this.clubOneName = clubOneName;
-        this.clubTwoName = clubTwoName;
+    private String league_id;
+    private String location;
+    private String away_name;
+    private String home_name;
+    private String round;
+    private String time;
+    private String date;
+    private Calendar calendar;
+
+    public Fixture(String league_id, String location, String away_name, String home_name, String round, String time, String date) {
+        this.league_id = league_id;
+        this.location = location;
+        this.away_name = away_name;
+        this.home_name = home_name;
+        this.round = round;
+        this.time = time;
         this.date = date;
-        this.messages = new ArrayList<>();
     }
 
-    public String getId() {
-        return id;
+    public String getLeague_id() {
+        return league_id;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setLeague_id(String id) {
+        this.league_id = id;
     }
 
-    public long getMatch_id() {
-        return match_id;
+    public String getlocation() {
+        return location;
     }
 
-    public void setMatch_id(long match_id) {
-        this.match_id = match_id;
+    public void setlocation(String location) {
+        this.location = location;
     }
 
-    public long getDivision_id() {
-        return division_id;
+    public String getAway_name() {
+        return away_name;
     }
 
-    public void setDivision_id(long division_id) {
-        this.division_id = division_id;
+    public void setAway_name(String away_name) {
+        this.away_name = away_name;
     }
 
-    public String getAddress() {
-        return address;
+    public String getHome_name() {
+        return home_name;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setHome_name(String home_name) {
+        this.home_name = home_name;
     }
 
-    public long getClubOneId() {
-        return clubOneId;
+    public String getRound() {
+        return round;
     }
 
-    public void setClubOneId(long clubOneId) {
-        this.clubOneId = clubOneId;
-    }
-
-    public long getClubTwoId() {
-        return clubTwoId;
-    }
-
-    public void setClubTwoId(long clubTwoId) {
-        this.clubTwoId = clubTwoId;
-    }
-
-    public String getClubOneName() {
-        return clubOneName;
-    }
-
-    public void setClubOneName(String clubOneName) {
-        this.clubOneName = clubOneName;
-    }
-
-    public String getClubTwoName() {
-        return clubTwoName;
-    }
-
-    public void setClubTwoName(String clubTwoName) {
-        this.clubTwoName = clubTwoName;
-    }
-
-    public String getWeather() {
-        return weather;
-    }
-
-    public void setWeather(String weather) {
-        this.weather = weather;
-    }
-
-    public String getWeatherUrl() {
-        return weatherUrl;
-    }
-
-    public void setWeatherUrl(String weatherUrl) {
-        this.weatherUrl = weatherUrl;
+    public void setRound(String round) {
+        this.round = round;
     }
 
     public String getDate() {
@@ -148,32 +114,44 @@ public class Fixture implements Parcelable {
     }
 
     public String getTime() {
-        if (date == null) {
+        /*if (date == null) {
             date = "";
-        }
+        }*/
 //        if (!date.contains("T")) return date;
 
-        int separatorIndex = date.indexOf(" ");
+        /*int separatorIndex = date.indexOf(" ");
         if (separatorIndex + 1 + 5 > date.length()) {
             return date;
-        }
+        }*/
 
-        return date.substring(separatorIndex + 1, separatorIndex + 1 + 5);
+        //return date.substring(separatorIndex + 1, separatorIndex + 1 + 5);
+        return time;
+    }
+
+    public void setTime(String time){
+        this.time = time;
     }
 
     public void setDate(String date) {
         this.date = date;
     }
 
-    public LatLng getLocation() {
-        return location;
+    public Calendar getCalendar() {
+        if (calendar == null) {
+            calendar = Calendar.getInstance();
+            calendar.setFirstDayOfWeek(Calendar.SATURDAY);
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd");
+
+            try {
+                calendar.setTime(sdf.parse(getDate()));
+            } catch (ParseException e) {
+                calendar = null;
+            }
+        }
+        return calendar;
     }
 
-    public void setLocation(LatLng location) {
-        this.location = location;
-    }
-
-    public List<ChatMessage> getMessages() {
+    /*public List<ChatMessage> getMessages() {
         return messages;
     }
 
@@ -210,44 +188,31 @@ public class Fixture implements Parcelable {
         }
 
         setMessages(messages);
-    }
+    }*/
 
-    @Override
+   /* @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
         Fixture fixture = (Fixture) o;
 
-        return id != null ? id.equals(fixture.id) : fixture.id == null;
+        return league_id != null ? league_id.equals(fixture.league_id) : fixture.league_id == null;
 
     }
 
     @Override
     public int hashCode() {
-        return id != null ? id.hashCode() : 0;
+        return league_id != null ? league_id.hashCode() : 0;
     }
 
 
-    public Calendar getCalendar() {
-        if (calendar == null) {
-            calendar = Calendar.getInstance();
-            calendar.setFirstDayOfWeek(Calendar.SATURDAY);
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd");
 
-            try {
-                calendar.setTime(sdf.parse(getDate()));
-            } catch (ParseException e) {
-                calendar = null;
-            }
-        }
-        return calendar;
-    }
 
     @Override
     public String toString() {
         return "Fixture{" +
-                "id='" + id + '\'' +
+                "id='" + league_id + '\'' +
                 ", match_id=" + match_id +
                 ", division_id=" + division_id +
                 ", date='" + date + '\'' +
@@ -292,6 +257,44 @@ public class Fixture implements Parcelable {
         this.weather = in.readString();
         this.weatherUrl = in.readString();
         this.messages = in.createTypedArrayList(ChatMessage.CREATOR);
+    }
+
+    public static final Creator<Fixture> CREATOR = new Creator<Fixture>() {
+        @Override
+        public Fixture createFromParcel(Parcel source) {
+            return new Fixture(source);
+        }
+
+        @Override
+        public Fixture[] newArray(int size) {
+            return new Fixture[size];
+        }
+    };*/
+
+   @Override
+   public int describeContents() {
+       return 0;
+   }
+
+   @Override
+   public void writeToParcel(Parcel dest, int flags) {
+       dest.writeString(this.league_id);
+       dest.writeString(this.location);
+       dest.writeString(this.away_name);
+       dest.writeString(this.home_name);
+       dest.writeString(this.round);
+       dest.writeString(this.time);
+       dest.writeString(this.date);
+   }
+
+    protected Fixture(Parcel in) {
+        this.league_id = in.readString();
+        this.location = in.readString();
+        this.away_name = in.readString();
+        this.home_name = in.readString();
+        this.round = in.readString();
+        this.time = in.readString();
+        this.date = in.readString();
     }
 
     public static final Creator<Fixture> CREATOR = new Creator<Fixture>() {

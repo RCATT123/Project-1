@@ -16,9 +16,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.parse.FunctionCallback;
-import com.parse.ParseCloud;
-import com.parse.ParseException;
+//import com.parse.FunctionCallback;
+//import com.parse.ParseCloud;
+//import com.parse.ParseException;
 import com.specifix.pureleagues.R;
 import com.specifix.pureleagues.api.UserManager;
 import com.specifix.pureleagues.model.ChatMessage;
@@ -124,12 +124,12 @@ public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.ViewHo
 //            holder.mImage.setImageBitmap(null);
         }
 
-        if (mList.get(position).getAuthorId()
+        /*if (mList.get(position).getAuthorId()
                 .equals(UserManager.getInstance().getCurrentUser().getObjectId()) || mList.get(position).isHidden()) {
             holder.mAlert.setVisibility(View.INVISIBLE);
         } else {
             holder.mAlert.setVisibility(View.VISIBLE);
-        }
+        }*/
 
         holder.mAlert.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -146,18 +146,18 @@ public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.ViewHo
                                  notifyItemChanged(holder.getAdapterPosition());
 
                                  Map<String, String> params = new HashMap<>();
-                                 params.put("fromEmail", UserManager.getInstance().getCurrentUser().getEmail());
+                                 //params.put("fromEmail", UserManager.getInstance().getCurrentUser().getEmail());
                                  params.put("toEmail", holder.mName.getContext().getString(R.string.admin_email));
                                  params.put("subject", mContext.getString(R.string.report_abuse));
                                  params.put("emailText", mContext.getString(R.string.url_to_report_begin)
                                          + mList.get(holder.getAdapterPosition()).getObjectId()
                                          + mContext.getString(R.string.url_to_report_end));
-                                 ParseCloud.callFunctionInBackground("report_abuse", params, new FunctionCallback<Object>() {
+                                 /*ParseCloud.callFunctionInBackground("report_abuse", params, new FunctionCallback<Object>() {
                                      @Override
                                      public void done(Object object, ParseException e) {
 
                                      }
-                                 });
+                                 });*/
 
 //                                 final Configuration configuration = new Configuration()
 //                                         .domain(mContext.getString(R.string.mailgun_domain))

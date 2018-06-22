@@ -13,7 +13,7 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import com.google.gson.Gson;
-import com.parse.ParsePushBroadcastReceiver;
+//import com.parse.ParsePushBroadcastReceiver;
 import com.specifix.pureleagues.R;
 import com.specifix.pureleagues.activity.MainActivity;
 import com.specifix.pureleagues.activity.SplashActivity;
@@ -24,7 +24,8 @@ import com.specifix.pureleagues.model.User;
 
 import java.util.List;
 
-public class PushReceiver extends ParsePushBroadcastReceiver {
+//public class PushReceiver extends ParsePushBroadcastReceiver {
+public class PushReceiver {
     public static final String EVENT_TYPE = "event_type";
     public static final String LIST_POSITION = "list_position";
     public static final String FROM_PUSH = "from_push";
@@ -38,14 +39,14 @@ public class PushReceiver extends ParsePushBroadcastReceiver {
 
         Log.d("Wraith", "Push received " + message.toString());
         boolean showPush = false;
-        List<Team> teams = UserManager.getInstance().getCurrentUser().getTeams();
+        /*List<Team> teams = UserManager.getInstance().getCurrentUser().getTeams();
         if (teams != null) {
             for (Team team : teams) {
                 if (Long.parseLong(message.getTeamId()) == team.getTeamId()) {
                     showPush = team.isAllowNotifications();
                 }
             }
-        }
+        }*/
 
         if (showPush) {
             showNotification(context, message);
@@ -54,16 +55,16 @@ public class PushReceiver extends ParsePushBroadcastReceiver {
 
     private void showNotification(Context context, PushMessage message) {
 
-        User currentUser = UserManager.getInstance().getCurrentUser();
+        String currentUser = UserManager.getInstance().getCurrentUser();
         if (currentUser == null)
             return;
 
-        if (currentUser.getObjectId().equals(message.getSenderId()))
+        /*if (currentUser.getObjectId().equals(message.getSenderId()))
             return;
 
         if (UserManager.getInstance().getUserAge() < UserManager.MIN_ALLOWED_AGE)
             return;
-
+        */
 //        if (MainActivity.isActive()) {
 //            return;
 //        }

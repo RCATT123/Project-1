@@ -1,0 +1,41 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!-- Splash screen theme -->
+    <style name="AppTheme.Splash" parent="AppTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowBackground">@drawable/background_splash</item>
+    </style>
+
+    <!-- DatePicker theme -->
+    <style name="AppTheme.DatePicker" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="LoginEditTextStyle" parent="@android:style/Widget.EditText">
+        <item name="android:background">@drawable/register_form_background</item>
+        <item name="android:textSize">@dimen/form_edittext_text_size</item>
+        <item name="android:paddingBottom">@dimen/form_edittext_vertical_padding</item>
+        <item name="android:paddingTop">@dimen/form_edittext_vertical_padding</item>
+        <item name="android:paddingLeft">@dimen/form_edittext_horizontal_padding</item>
+        <item name="android:paddingRight">@dimen/form_edittext_horizontal_padding</item>
+    </style>
+
+    <style name="ContactUsEditTextStyle" parent="@android:style/Widget.EditText">
+        <item name="android:background">@drawable/contact_us_edittext_background</item>
+        <item name="android:textSize">@dimen/form_edittext_text_size</item>
+        <item name="android:paddingBottom">@dimen/form_edittext_vertical_padding</item>
+        <item name="android:paddingTop">@dimen/form_edittext_vertical_padding</item>
+        <item name="android:paddingLeft">@dimen/form_edittext_horizontal_padding</item>
+        <item name="android:paddingRight">@dimen/form_edittext_horizontal_padding</item>
+    </style>
+
+</resources>

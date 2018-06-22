@@ -43,7 +43,7 @@ public class RegisterPickerAdapter extends RecyclerView.Adapter<RecyclerView.Vie
             mFilteredData = new ArrayList<>((Collection<? extends FootballAssociation>) list);
         }
         if (dataType == DATA_TEAM_COLOURS_TYPE) {
-            mTeamColors = UserManager.getInstance().getTeamColors();
+            //mTeamColors = UserManager.getInstance().getTeamColors();
         }
         mListener = listener;
         mGothamBold = Typeface.createFromAsset(((Context)listener).getAssets(), "GothamBold.otf");

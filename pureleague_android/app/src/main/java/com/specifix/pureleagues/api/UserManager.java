@@ -11,15 +11,16 @@ import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;
-import com.parse.LogInCallback;
-import com.parse.LogOutCallback;
-import com.parse.ParseException;
-import com.parse.ParseFile;
-import com.parse.ParseUser;
-import com.parse.RequestPasswordResetCallback;
-import com.parse.SaveCallback;
-import com.parse.SignUpCallback;
+//import com.parse.LogInCallback;
+//import com.parse.LogOutCallback;
+//import com.parse.ParseException;
+//import com.parse.ParseFile;
+//import com.parse.ParseUser;
+//import com.parse.RequestPasswordResetCallback;
+//import com.parse.SaveCallback;
+//import com.parse.SignUpCallback;
 import com.specifix.pureleagues.R;
+import com.specifix.pureleagues.manager.PrefsManager;
 import com.specifix.pureleagues.model.Team;
 import com.specifix.pureleagues.model.User;
 import com.specifix.pureleagues.util.Login;
@@ -91,21 +92,21 @@ public class UserManager {
     }
 
     public void registerUser(User user, final UserListener listener) {
-        ParseUser parseUser = new ParseUser();
+        /*ParseUser parseUser = new ParseUser();
         parseUser.put(NAME_KEY, user.getName());
         parseUser.setUsername(user.getUsername());
         parseUser.setPassword(user.getPassword());
         parseUser.setEmail(user.getEmail());
         parseUser.put(DATE_OF_BIRTH_KEY, user.getDateOfBirth());
         parseUser.put(GENDER_KEY, user.getGender());
-        parseUser.put(USER_TYPE_KEY, user.getType());
+        parseUser.put(USER_TYPE_KEY, user.getType());*/
 //        if (user.getType().equals("Player")) {
 //            parseUser.put(HEIGHT_KEY, user.getHeight());
 //            parseUser.put(WEIGHT_KEY, user.getWeight());
 //            parseUser.put(POSITION_KEY, user.getPosition());
 //            parseUser.put(ABOUT_ME_KEY, user.getProfile());
 //        }
-        parseUser.signUpInBackground(new SignUpCallback() {
+        /*parseUser.signUpInBackground(new SignUpCallback() {
             public void done(ParseException e) {
                 if (e == null) {
                     listener.onSuccess();
@@ -122,10 +123,47 @@ public class UserManager {
                     }
                 }
             }
+        });*/
+
+
+        ApiInterface mApiService = ApiClient.getApiClient().create(ApiInterface.class);
+        Call<Login> mService = mApiService.registration(user.getName(), user.getEmail(), user.getGender(), user.getDateOfBirth(),
+                user.getUsername(), user.getType(), user.getPassword(), user.getHeight(), user.getWeight(), user.getPosition(), user.getProfile());
+        mService.enqueue(new Callback<Login>() {
+            @Override
+            public void onResponse(Call<Login> call, Response<Login> response) {
+                Login mLoginObject = response.body();
+                String returnedResponse = mLoginObject.isLogin;
+                //showProgress(false);
+                if(returnedResponse.trim().equals("0")){
+                    // redirect to Main Activity page
+                    listener.onSuccess();
+                }
+                if(returnedResponse.trim().equals("1")){
+                    // use the registration button to register
+                    listener.onError("This email already taken");
+                }
+                if(returnedResponse.trim().equals("2")){
+                    // use the registration button to register
+                    listener.onError("This user already exist");
+                }
+                if(returnedResponse.trim().equals("3")){
+                    // use the registration button to register
+                    listener.onError("Something happend, try again");
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Login> call, Throwable t) {
+                call.cancel();
+                listener.onError("Connection error");
+            }
         });
+
+
     }
 
-    public void loginUser(String username, String password) {
+    public void loginUser(String username, String password, final UserListener listener) {
         /*ParseUser.logInInBackground(
                 username,
                 password,
@@ -146,43 +184,34 @@ public class UserManager {
                     }
                 });*/
         //System.out.println("UserManager.loginUser");
-        ApiInterface mApiService = this.getInterfaceService();
+        ApiInterface mApiService = ApiClient.getApiClient().create(ApiInterface.class);
         Call<Login> mService = mApiService.authenticate(username, password);
         mService.enqueue(new Callback<Login>() {
             @Override
             public void onResponse(Call<Login> call, Response<Login> response) {
-
                 Login mLoginObject = response.body();
-                Log.w(" Full json res ", new Gson().toJson(response));
-                //String returnedResponse = mLoginObject.isLogin;
-                //Toast.makeText(UserManager.this, "Returned " + returnedResponse, Toast.LENGTH_LONG).show();
-                //System.out.println("UserManager.onResponse "+ returnedResponse);
-
-                //showProgress(false);
-                //if(returnedResponse.trim().equals("1")){
+                System.out.println("UserManager.onResponse "+mLoginObject.toString());
+                String returnedResponse = mLoginObject.getIsLogin();
+                if(returnedResponse.trim().equals("1")){
                     // redirect to Main Activity page
-                    /*Intent loginIntent = new Intent(LoginActivity.this, MainActivity.class);
-                    loginIntent.putExtra("EMAIL", email);
-                    startActivity(loginIntent);*/
-                //}
-                //if(returnedResponse.trim().equals("0")){
+                    listener.onUserLogin(mLoginObject.getUserID());
+                }
+                if(returnedResponse.trim().equals("0")){
                     // use the registration button to register
-                    /*failedLoginMessage.setText(getResources().getString(R.string.registration_message));
-                    mPasswordView.requestFocus();*/
-                //}
+                    listener.onError(((Context) listener).getString(R.string.invalid_credentials_error_message));
+                }
             }
 
             @Override
             public void onFailure(Call<Login> call, Throwable t) {
                 call.cancel();
-                System.out.println("UserManager.onFailure");
-                //Toast.makeText(LoginActivity.this, "Please check your network connection and internet permission", Toast.LENGTH_LONG).show();
+                listener.onError("Connection error");
             }
         });
     }
 
     public void updateUserProfile(User userProfile, final UserListener listener) {
-        final ParseUser user = ParseUser.getCurrentUser();
+        /*final ParseUser user = ParseUser.getCurrentUser();
         user.put(NAME_KEY, userProfile.getName());
         user.setUsername(user.getUsername());
         user.put(DATE_OF_BIRTH_KEY, userProfile.getDateOfBirth());
@@ -226,19 +255,22 @@ public class UserManager {
                     }
                 }
             });
-        }
+        }*/
     }
 
     public void logoutUser(final LogoutListener listener) {
-        ParseUser.logOutInBackground(new LogOutCallback() {
+        /*ParseUser.logOutInBackground(new LogOutCallback() {
             @Override
             public void done(ParseException e) {
                 listener.onLogout();
             }
-        });
+        });*/
+        PrefsManager prefsManager = new PrefsManager();
+        prefsManager.clearPrefs();
+        listener.onLogout();
     }
 
-    public User getCurrentUser() {
+    /*public User getCurrentUser() {
         ParseUser parseUser = ParseUser.getCurrentUser();
         if (parseUser == null) {
             return null;
@@ -276,9 +308,15 @@ public class UserManager {
         user.setTeams(teams);
 
         return user;
+    }*/
+
+    public String getCurrentUser(){
+        PrefsManager prefsManager = new PrefsManager();
+        String user = prefsManager.getUserId();
+        return user;
     }
 
-    public int getUserAge() {
+    /*public int getUserAge() {
         if (getCurrentUser().getDateOfBirth() == null) {
             return 0;
         }
@@ -293,10 +331,10 @@ public class UserManager {
         int age = (int) (interval / DateUtils.YEAR_IN_MILLIS);
 
         return age;
-    }
+    }*/
 
     public void resetPassword(String email, final UserListener listener) {
-        ParseUser.requestPasswordResetInBackground(email, new RequestPasswordResetCallback() {
+        /*ParseUser.requestPasswordResetInBackground(email, new RequestPasswordResetCallback() {
             public void done(ParseException e) {
                 if (e == null) {
                     listener.onSuccess();
@@ -304,10 +342,40 @@ public class UserManager {
                     listener.onError(e.getLocalizedMessage());
                 }
             }
+        });*/
+        /*
+        * We have to write password reset emaiil in server side php code
+        */
+        ApiInterface mApiService = ApiClient.getApiClient().create(ApiInterface.class);
+        Call<Login> mService = mApiService.resetPassword(email, "");
+        mService.enqueue(new Callback<Login>() {
+            @Override
+            public void onResponse(Call<Login> call, Response<Login> response) {
+                Login mLoginObject = response.body();
+                String returnedResponse = mLoginObject.isLogin;
+                if(returnedResponse.trim().equals("1")){
+                    // redirect to Main Activity page
+                    listener.onError("User does not exist with this email address");
+                }
+                if(returnedResponse.trim().equals("2")){
+                    // redirect to Main Activity page
+                    listener.onError("Something happend, try again");
+                }
+                if(returnedResponse.trim().equals("0")){
+                    // use the registration button to register
+                    listener.onSuccess();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Login> call, Throwable t) {
+                call.cancel();
+                listener.onError("Connection error");
+            }
         });
     }
 
-    public boolean isUserCompleteRegistered() {
+    /*public boolean isUserCompleteRegistered() {
         ParseUser user = ParseUser.getCurrentUser();
         String jsonArray = user.getString(TEAMS_KEY);
         List<Team> teams;
@@ -319,9 +387,9 @@ public class UserManager {
             teams = new Gson().fromJson(jsonArray, listType);
         }
         return teams.size() > 0;
-    }
+    }*/
 
-    public void addTeam(final Team team, final UserListener listener) {
+    /*public void addTeam(final Team team, final UserListener listener) {
         final ParseUser user = ParseUser.getCurrentUser();
         String jsonArray = user.getString(TEAMS_KEY);
         final List<Team> teams;
@@ -347,9 +415,9 @@ public class UserManager {
                 }
             }
         });
-    }
+    }*/
 
-    public void updateTeam(Team team) {
+    /*public void updateTeam(Team team) {
         ParseUser user = ParseUser.getCurrentUser();
         String jsonArray = user.getString(TEAMS_KEY);
         List<Team> teams;
@@ -369,9 +437,9 @@ public class UserManager {
             public void done(ParseException e) {
             }
         });
-    }
+    }*/
 
-    public void deleteTeam(final Team team, final UserListener listener) {
+    /*public void deleteTeam(final Team team, final UserListener listener) {
         final ParseUser user = ParseUser.getCurrentUser();
         String jsonArray = user.getString(TEAMS_KEY);
         final List<Team> teams;
@@ -397,17 +465,17 @@ public class UserManager {
                 }
             }
         });
-    }
+    }*/
 
-    public String[] getTeamColorNames() {
+    /*public String[] getTeamColorNames() {
         return mTeamColorNames;
-    }
+    }*/
 
-    public int[] getTeamColors() {
+    /*public int[] getTeamColors() {
         return mTeamColors;
-    }
+    }*/
 
-    public int getTeamColorRes(String color) {
+    /*public int getTeamColorRes(String color) {
         int teamColor = 0;
         for (int i = 0; i < mTeamColorNames.length; i++) {
             if (mTeamColorNames[i].equals(color)) {
@@ -415,39 +483,25 @@ public class UserManager {
             }
         }
         return teamColor;
-    }
+    }*/
 
-    public long getCurrentTeamId() {
+    /*public long getCurrentTeamId() {
         return currentTeamId;
-    }
+    }*/
 
-    public void setCurrentTeamId(long teamId) {
+    /*public void setCurrentTeamId(long teamId) {
         currentTeamId = teamId;
-    }
+    }*/
 
     public interface UserListener {
-
         void onSuccess();
-
-        void onUserLogin(ParseUser user);
-
+        //void onUserLogin(ParseUser user);
+        void onUserLogin(String userid);
         void onError(String message);
     }
 
     public interface LogoutListener {
-
         void onLogout();
-    }
-
-    private ApiInterface getInterfaceService() {
-
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://10.10.11.54:8080/pureleague/public/api/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
-        final ApiInterface mInterfaceService = retrofit.create(ApiInterface.class);
-        return mInterfaceService;
     }
 
 }

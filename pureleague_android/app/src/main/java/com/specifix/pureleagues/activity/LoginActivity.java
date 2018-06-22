@@ -17,10 +17,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.parse.ParseUser;
+//import com.parse.ParseUser;
 import com.specifix.pureleagues.R;
 import com.specifix.pureleagues.api.DataManager;
 import com.specifix.pureleagues.api.UserManager;
+import com.specifix.pureleagues.manager.PrefsManager;
 import com.specifix.pureleagues.model.Team;
 
 import java.util.List;
@@ -116,7 +117,7 @@ public class LoginActivity extends AppCompatActivity implements UserManager.User
 
         UserManager.getInstance().loginUser(
                 mUsernameEditText.getText().toString().trim().toLowerCase(),
-                mPasswordEditText.getText().toString());
+                mPasswordEditText.getText().toString(), this);
     }
 
     @OnClick(R.id.login_email_submit_button)
@@ -203,16 +204,20 @@ public class LoginActivity extends AppCompatActivity implements UserManager.User
         }
     }
 
-    @Override
-    public void onUserLogin(ParseUser user) {
-//        mSubmitBtn.setEnabled(true);
-//        if (mProgressDialog != null && mProgressDialog.isShowing()) {
-//            mProgressDialog.dismiss();
-//        }
+    //@Override
+    //public void onUserLogin(ParseUser user) {
+    public void onUserLogin(String userId) {
+        mSubmitBtn.setEnabled(true);
+        if (mProgressDialog != null && mProgressDialog.isShowing()) {
+            mProgressDialog.dismiss();
+        }
+        PrefsManager prefsManager = new PrefsManager();
+        prefsManager.setUserId(userId);
         final Intent intent = new Intent(LoginActivity.this, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
 
-        List<Team> teamList = UserManager.getInstance().getCurrentUser().getTeams();
+        /*List<Team> teamList = UserManager.getInstance().getCurrentUser().getTeams();
         if (teamList != null && teamList.size() != 0) {
             SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
             Team currentTeam = teamList.get(0);
@@ -253,7 +258,7 @@ public class LoginActivity extends AppCompatActivity implements UserManager.User
             Intent addTeamIntent = new Intent(LoginActivity.this, RegisterContinueActivity.class);
             addTeamIntent.putExtra(ADD_TEAM_KEY, true);
             startActivity(intent);
-        }
+        }*/
     }
 
     @Override

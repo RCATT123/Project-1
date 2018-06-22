@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="login_buttons_horizontal_layout_margin">16dp</dimen>
+    <dimen name="login_buttons_vertical_layout_margin">24dp</dimen>
+    <dimen name="form_edittext_vertical_padding">12dp</dimen>
+    <dimen name="form_edittext_horizontal_padding">16dp</dimen>
+    <dimen name="form_edittext_text_size">14sp</dimen>
+    <dimen name="tab_text_size">12sp</dimen>
+    <dimen name="edit_profile_labels_text_size">18sp</dimen>
+    <dimen name="edit_profile_data_text_size">20sp</dimen>
+    <dimen name="tables_items_text_size">12sp</dimen>
+    <dimen name="calendar_hint_cirlce_size">12dp</dimen>
+    <dimen name="calendar_hint_cirlce_padding">4dp</dimen>
+    <dimen name="title_arrow_margin">8dp</dimen>
+    <dimen name="send_message_image_size">48dp</dimen>
+    <dimen name="message_image_size">180dp</dimen>
+    <dimen name="size_of_new_image">720px</dimen>
+    <dimen name="size_of_profile">720px</dimen>
+</resources>

@@ -9,16 +9,18 @@ import com.specifix.pureleagues.api.UserManager;
 
 public class PrefsManager {
     private static final String PREFS_PREFIX = "unread_";
+    private static final String LOGIN_PREFIX = "login_pref";
 
     private SharedPreferences preferences;
 
     public PrefsManager() {
-        this(String.valueOf(UserManager.getInstance().getCurrentTeamId()));
+        //this(String.valueOf(UserManager.getInstance().getCurrentTeamId()));
+        preferences = App.getInstance().getSharedPreferences(LOGIN_PREFIX, Context.MODE_PRIVATE);
     }
 
-    public PrefsManager(String teamId) {
+    /*public PrefsManager(String teamId) {
         preferences = App.getInstance().getSharedPreferences(PREFS_PREFIX + teamId, Context.MODE_PRIVATE);
-    }
+    }*/
 
     public void clearPrefs() {
         preferences.edit()
@@ -34,5 +36,13 @@ public class PrefsManager {
 
     public String getLastMessageId(String eventId) {
         return preferences.getString(eventId, null);
+    }
+
+    public void setUserId(String userId){
+        preferences.edit().putString("Userid", userId).apply();
+    }
+
+    public String getUserId(){
+        return preferences.getString("Userid", null);
     }
 }

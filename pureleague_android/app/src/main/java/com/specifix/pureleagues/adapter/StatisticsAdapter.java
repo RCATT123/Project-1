@@ -86,12 +86,12 @@ public class StatisticsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
             dataHolder.mGoals.setText(goals != null ? goals : "-");
 
             boolean isUserTeam = false;
-            for (Team userTeam : UserManager.getInstance().getCurrentUser().getTeams()) {
+            /*for (Team userTeam : UserManager.getInstance().getCurrentUser().getTeams()) {
                 if (mScorerList.get(position).getTeamId() == userTeam.getTeamId()) {
                     isUserTeam = true;
                     setSelected(dataHolder, true);
                 }
-            }
+            }*/
             if (!isUserTeam) {
                 setSelected(dataHolder, false);
             }

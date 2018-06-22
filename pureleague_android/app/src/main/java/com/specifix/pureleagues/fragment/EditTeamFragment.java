@@ -21,8 +21,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.parse.ParsePush;
-import com.parse.ParseUser;
+//import com.parse.ParsePush;
+//import com.parse.ParseUser;
 import com.specifix.pureleagues.R;
 import com.specifix.pureleagues.activity.RegisterPickerActivity;
 import com.specifix.pureleagues.api.UserManager;
@@ -125,7 +125,7 @@ public class EditTeamFragment extends Fragment implements UserManager.UserListen
         super.onViewCreated(view, savedInstanceState);
         mName.setText(mTeam.getClub());
         mDivision.setText(mTeam.getDivision());
-        mShirt.setImageResource(UserManager.getInstance().getTeamColorRes(mTeam.getColor()));
+        /*mShirt.setImageResource(UserManager.getInstance().getTeamColorRes(mTeam.getColor()));
         mNotifSwitch.setChecked(mTeam.isAllowNotifications());
         mNotifSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -138,7 +138,7 @@ public class EditTeamFragment extends Fragment implements UserManager.UserListen
                     ParsePush.unsubscribeInBackground(CHANNEL_PREFIX + mTeam.getTeamId());
                 }
             }
-        });
+        });*/
 
         Typeface gothamBold = Typeface.createFromAsset(getContext().getAssets(), "GothamBold.otf");
         Typeface gothamBook = Typeface.createFromAsset(getContext().getAssets(), "GothamBook.otf");
@@ -157,11 +157,11 @@ public class EditTeamFragment extends Fragment implements UserManager.UserListen
         if (resultCode == RESULT_OK) {
             switch (requestCode) {
                 case TEAM_COLOURS_PICK_RC: {
-                    mShirt.setImageResource(UserManager.getInstance().getTeamColorRes(data.getStringExtra(PICKER_SELECTED_ITEM_KEY)));
+                    /*mShirt.setImageResource(UserManager.getInstance().getTeamColorRes(data.getStringExtra(PICKER_SELECTED_ITEM_KEY)));
                     mTeam.setColor(data.getStringExtra(PICKER_SELECTED_ITEM_KEY));
                     UserManager.getInstance().updateTeam(mTeam);
                     mCallback.onTeamColoursChanged(data.getStringExtra(PICKER_SELECTED_ITEM_KEY), false);
-                    break;
+                    break;*/
                 }
             }
         }
@@ -169,12 +169,12 @@ public class EditTeamFragment extends Fragment implements UserManager.UserListen
 
     @OnClick(R.id.edit_team_shirt_picker_layout)
     public void onShirtClick() {
-        Intent intent = new Intent(getContext(), RegisterPickerActivity.class);
+        /*Intent intent = new Intent(getContext(), RegisterPickerActivity.class);
         intent.putExtra(PICKER_TITLE_KEY, getString(R.string.edit_team_title));
         intent.putExtra(PICKER_LAYOUT_TYPE_KEY, GRID_LAYOUT_TYPE);
         intent.putExtra(PICKER_DATA_TYPE_KEY, DATA_TEAM_COLOURS_TYPE);
         intent.putExtra(PICKER_DATA_KEY, UserManager.getInstance().getTeamColorNames());
-        startActivityForResult(intent, TEAM_COLOURS_PICK_RC);
+        startActivityForResult(intent, TEAM_COLOURS_PICK_RC);*/
     }
 
     @OnClick(R.id.edit_team_delete_button)
@@ -184,12 +184,12 @@ public class EditTeamFragment extends Fragment implements UserManager.UserListen
                 .setPositiveButton(R.string.delete_text, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        ParsePush.unsubscribeInBackground(CHANNEL_PREFIX + mTeam.getTeamId());
+                        /*ParsePush.unsubscribeInBackground(CHANNEL_PREFIX + mTeam.getTeamId());
                         UserManager.getInstance().deleteTeam(mTeam, EditTeamFragment.this);
                         mProgressDialog = new ProgressDialog(getContext());
                         mProgressDialog.setMessage(getString(R.string.deleting_message));
                         mProgressDialog.setCancelable(false);
-                        mProgressDialog.show();
+                        mProgressDialog.show();*/
                     }
                 })
                 .setNegativeButton(R.string.no_text, new DialogInterface.OnClickListener() {
@@ -250,7 +250,10 @@ public class EditTeamFragment extends Fragment implements UserManager.UserListen
     }
 
     @Override
-    public void onUserLogin(ParseUser user) {
+    /* public void onUserLogin(ParseUser user) {
+
+    } */
+    public void onUserLogin(String userid) {
 
     }
 
